@@ -1343,11 +1343,11 @@ footer {
   <div style="margin-top: 40px;" class="reveal">
     <h3 style="color:var(--white); margin-bottom:16px; font-size:16px;">📊 Скриншоты статистики Instagram*</h3>
     <div style="display:flex; gap:12px; overflow-x:auto; padding-bottom:12px;">
-      <img src="media/photos/photo_01.jpg" style="height:300px; border-radius:8px;" alt="Статистика 1" onclick="openLightbox(this.src)" loading="lazy">
-      <img src="media/photos/photo_02.jpg" style="height:300px; border-radius:8px;" alt="Статистика 2" onclick="openLightbox(this.src)" loading="lazy">
-      <img src="media/photos/photo_03.jpg" style="height:300px; border-radius:8px;" alt="Статистика 3" onclick="openLightbox(this.src)" loading="lazy">
-      <img src="media/photos/photo_04.jpg" style="height:300px; border-radius:8px;" alt="Статистика 4" onclick="openLightbox(this.src)" loading="lazy">
-      <img src="media/photos/photo_05.jpg" style="height:300px; border-radius:8px;" alt="Статистика 5" onclick="openLightbox(this.src)" loading="lazy">
+      <img src="media/photo_01.jpg" style="height:300px; border-radius:8px;" alt="Статистика 1" onclick="openLightbox(this.src)" loading="lazy">
+      <img src="media/photo_02.jpg" style="height:300px; border-radius:8px;" alt="Статистика 2" onclick="openLightbox(this.src)" loading="lazy">
+      <img src="media/photo_03.jpg" style="height:300px; border-radius:8px;" alt="Статистика 3" onclick="openLightbox(this.src)" loading="lazy">
+      <img src="media/photo_04.jpg" style="height:300px; border-radius:8px;" alt="Статистика 4" onclick="openLightbox(this.src)" loading="lazy">
+      <img src="media/photo_05.jpg" style="height:300px; border-radius:8px;" alt="Статистика 5" onclick="openLightbox(this.src)" loading="lazy">
     </div>
   </div>
 </section>
@@ -1843,7 +1843,7 @@ let galleryImages = [];
 
 for (let i = 1; i <= TOTAL_PHOTOS; i++) {
   const num = String(i).padStart(2, '0');
-  const src = `/media/photos/photo_${num}.jpg`;
+  const src = `/media/photo_${num}.jpg`;
   galleryImages.push(src);
 
   const item = document.createElement('div');
