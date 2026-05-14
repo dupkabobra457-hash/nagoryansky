@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Владимир Нагорянский — профессиональный BJJ-спортсмен, #1 в Северной Америке, #2 в мире по версии AJP. Спонсорство и сотрудничество.">
-    <meta name="keywords" content="BJJ, бразильское джиу-джитсу, Владимир Нагорянский, спонсорство, AJP, чемпион, Baseball Bat, Nagoryansky">
+    <meta name="description" content="Официальный сайт Владимира Нагорянского — №1 BJJ Северной Америки, №2 мира. Профессиональный спортсмен по бразильскому джиу-джитсу. Спонсорство и сотрудничество.">
+    <meta name="keywords" content="Владимир Нагорянский, Vladimir Nagoryansky, Baseball Bat, BJJ, бразильское джиу-джитсу, AJP, чемпион мира, №1 Северная Америка, №2 мир, спортсмен, спонсорство, джиу-джитсу, grappling">
     <meta name="author" content="Vladimir Nagoryansky">
-    <meta property="og:title" content="Владимир Нагорянский — BJJ Athlete">
-    <meta property="og:description" content="#1 Северная Америка AJP · #2 Мировой рейтинг · 10+ золотых медалей">
+    <meta property="og:title" content="Владимир Нагорянский — №1 BJJ Северной Америки, №2 мира">
+    <meta property="og:description" content="Официальный сайт Владимира Нагорянского — №1 BJJ Северной Америки, №2 мира. Профессиональный спортсмен по бразильскому джиу-джитсу.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://placeholder.co/1200x630">
+    <meta property="og:image" content="media/vladimir_profile.jpg">
+    <meta property="og:url" content="https://nagoryansky.com">
     <meta name="twitter:card" content="summary_large_image">
-    <title>Владимир Нагорянский | BJJ · #1 Северная Америка</title>
+    <meta name="twitter:title" content="Владимир Нагорянский — №1 BJJ Северной Америки">
+    <meta name="twitter:description" content="Официальный сайт Владимира Нагорянского. №1 BJJ Северной Америки, №2 мира.">
+    <meta name="twitter:image" content="media/vladimir_profile.jpg">
+    <link rel="canonical" href="https://nagoryansky.com">
+    <meta name="yandex-verification" content="PLACEHOLDER_YANDEX_VERIFICATION">
+    <meta name="google-site-verification" content="PLACEHOLDER_GOOGLE_VERIFICATION">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥋</text></svg>">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Person","name":"Владимир Нагорянский","alternateName":["Vladimir Nagoryansky","Baseball Bat"],"description":"Российский спортсмен по бразильскому джиу-джитсу. №1 рейтинга AJP в Северной Америке, №2 в мировом рейтинге.","image":"/media/vladimir_profile.jpg","sameAs":["https://www.instagram.com/the_baseball_bat_fighter","https://youtube.com/@the_baseball_bat","https://t.me/the_baseball_bat","https://ajptour.com/en/profile/183810"]}
+    </script>
+    <title>Владимир Нагорянский | BJJ · №1 Северная Америка · №2 Мир</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -706,6 +717,74 @@
         }
         .press-card:hover .press-link-text::after { transform: translateX(4px); }
 
+        /* ============ ARTICLES ============ */
+        .articles { background: var(--bg); }
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+        }
+        .article-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            transition: all var(--transition);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+        .article-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-dim));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition);
+        }
+        .article-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--gold);
+            box-shadow: 0 8px 30px var(--gold-glow);
+        }
+        .article-card:hover::after { transform: scaleX(1); }
+        .article-platform {
+            display: inline-block;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--gold);
+            margin-bottom: 12px;
+            background: var(--gold-glow);
+            padding: 4px 12px;
+            border-radius: 20px;
+            align-self: flex-start;
+        }
+        .article-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        .article-card p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            flex: 1;
+        }
+        .article-meta {
+            margin-top: 16px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--gold-dim);
+            letter-spacing: 0.05em;
+        }
+
         /* ============ MEDIA KIT ============ */
         .mediakit {}
         .mediakit-card {
@@ -1113,7 +1192,8 @@
             .contact-inner,
             .sponsor-benefits,
             .video-grid,
-            .press-grid { grid-template-columns: 1fr; }
+            .press-grid,
+            .articles-grid { grid-template-columns: 1fr; }
             .media-grid { grid-template-columns: 1fr; }
             .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
             .about-image { aspect-ratio: 2/3; max-width: 280px; margin: 0 auto; }
@@ -1190,6 +1270,7 @@
                 <li><a href="#fights">Бои</a></li>
                 <li><a href="#video">Видео</a></li>
                 <li><a href="#press">Пресса</a></li>
+                <li><a href="#articles">Статьи</a></li>
                 <li><a href="#media">Соцсети</a></li>
                 <li><a href="#sponsors">Спонсорам</a></li>
                 <li><a href="#mediakit">Медиа-кит</a></li>
@@ -1377,132 +1458,132 @@
             <span class="section-label">Галерея</span>
             <h2 class="section-title">Фото с турниров</h2>
             <div class="gallery-grid" id="galleryGrid">
-                <div class="gallery-item" data-full="/media/photos/photo_01.jpg" data-caption="Владимир Нагорянский #1">
-                    <img src="/media/photos/photo_01.jpg" alt="Photo 01" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_01.jpg" data-caption="Владимир Нагорянский #1">
+                    <img src="media/photos/photo_01.jpg" alt="Photo 01" loading="lazy">
                     <div class="gallery-item-overlay"><span>#1</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_02.jpg" data-caption="Владимир Нагорянский #2">
-                    <img src="/media/photos/photo_02.jpg" alt="Photo 02" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_02.jpg" data-caption="Владимир Нагорянский #2">
+                    <img src="media/photos/photo_02.jpg" alt="Photo 02" loading="lazy">
                     <div class="gallery-item-overlay"><span>#2</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_03.jpg" data-caption="Владимир Нагорянский #3">
-                    <img src="/media/photos/photo_03.jpg" alt="Photo 03" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_03.jpg" data-caption="Владимир Нагорянский #3">
+                    <img src="media/photos/photo_03.jpg" alt="Photo 03" loading="lazy">
                     <div class="gallery-item-overlay"><span>#3</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_04.jpg" data-caption="Владимир Нагорянский #4">
-                    <img src="/media/photos/photo_04.jpg" alt="Photo 04" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_04.jpg" data-caption="Владимир Нагорянский #4">
+                    <img src="media/photos/photo_04.jpg" alt="Photo 04" loading="lazy">
                     <div class="gallery-item-overlay"><span>#4</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_05.jpg" data-caption="Владимир Нагорянский #5">
-                    <img src="/media/photos/photo_05.jpg" alt="Photo 05" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_05.jpg" data-caption="Владимир Нагорянский #5">
+                    <img src="media/photos/photo_05.jpg" alt="Photo 05" loading="lazy">
                     <div class="gallery-item-overlay"><span>#5</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_06.jpg" data-caption="Владимир Нагорянский #6">
-                    <img src="/media/photos/photo_06.jpg" alt="Photo 06" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_06.jpg" data-caption="Владимир Нагорянский #6">
+                    <img src="media/photos/photo_06.jpg" alt="Photo 06" loading="lazy">
                     <div class="gallery-item-overlay"><span>#6</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_07.jpg" data-caption="Владимир Нагорянский #7">
-                    <img src="/media/photos/photo_07.jpg" alt="Photo 07" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_07.jpg" data-caption="Владимир Нагорянский #7">
+                    <img src="media/photos/photo_07.jpg" alt="Photo 07" loading="lazy">
                     <div class="gallery-item-overlay"><span>#7</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_08.jpg" data-caption="Владимир Нагорянский #8">
-                    <img src="/media/photos/photo_08.jpg" alt="Photo 08" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_08.jpg" data-caption="Владимир Нагорянский #8">
+                    <img src="media/photos/photo_08.jpg" alt="Photo 08" loading="lazy">
                     <div class="gallery-item-overlay"><span>#8</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_09.jpg" data-caption="Владимир Нагорянский #9">
-                    <img src="/media/photos/photo_09.jpg" alt="Photo 09" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_09.jpg" data-caption="Владимир Нагорянский #9">
+                    <img src="media/photos/photo_09.jpg" alt="Photo 09" loading="lazy">
                     <div class="gallery-item-overlay"><span>#9</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_10.jpg" data-caption="Владимир Нагорянский #10">
-                    <img src="/media/photos/photo_10.jpg" alt="Photo 10" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_10.jpg" data-caption="Владимир Нагорянский #10">
+                    <img src="media/photos/photo_10.jpg" alt="Photo 10" loading="lazy">
                     <div class="gallery-item-overlay"><span>#10</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_11.jpg" data-caption="Владимир Нагорянский #11">
-                    <img src="/media/photos/photo_11.jpg" alt="Photo 11" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_11.jpg" data-caption="Владимир Нагорянский #11">
+                    <img src="media/photos/photo_11.jpg" alt="Photo 11" loading="lazy">
                     <div class="gallery-item-overlay"><span>#11</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_12.jpg" data-caption="Владимир Нагорянский #12">
-                    <img src="/media/photos/photo_12.jpg" alt="Photo 12" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_12.jpg" data-caption="Владимир Нагорянский #12">
+                    <img src="media/photos/photo_12.jpg" alt="Photo 12" loading="lazy">
                     <div class="gallery-item-overlay"><span>#12</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_13.jpg" data-caption="Владимир Нагорянский #13">
-                    <img src="/media/photos/photo_13.jpg" alt="Photo 13" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_13.jpg" data-caption="Владимир Нагорянский #13">
+                    <img src="media/photos/photo_13.jpg" alt="Photo 13" loading="lazy">
                     <div class="gallery-item-overlay"><span>#13</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_14.jpg" data-caption="Владимир Нагорянский #14">
-                    <img src="/media/photos/photo_14.jpg" alt="Photo 14" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_14.jpg" data-caption="Владимир Нагорянский #14">
+                    <img src="media/photos/photo_14.jpg" alt="Photo 14" loading="lazy">
                     <div class="gallery-item-overlay"><span>#14</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_15.jpg" data-caption="Владимир Нагорянский #15">
-                    <img src="/media/photos/photo_15.jpg" alt="Photo 15" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_15.jpg" data-caption="Владимир Нагорянский #15">
+                    <img src="media/photos/photo_15.jpg" alt="Photo 15" loading="lazy">
                     <div class="gallery-item-overlay"><span>#15</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_16.jpg" data-caption="Владимир Нагорянский #16">
-                    <img src="/media/photos/photo_16.jpg" alt="Photo 16" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_16.jpg" data-caption="Владимир Нагорянский #16">
+                    <img src="media/photos/photo_16.jpg" alt="Photo 16" loading="lazy">
                     <div class="gallery-item-overlay"><span>#16</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_17.jpg" data-caption="Владимир Нагорянский #17">
-                    <img src="/media/photos/photo_17.jpg" alt="Photo 17" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_17.jpg" data-caption="Владимир Нагорянский #17">
+                    <img src="media/photos/photo_17.jpg" alt="Photo 17" loading="lazy">
                     <div class="gallery-item-overlay"><span>#17</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_18.jpg" data-caption="Владимир Нагорянский #18">
-                    <img src="/media/photos/photo_18.jpg" alt="Photo 18" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_18.jpg" data-caption="Владимир Нагорянский #18">
+                    <img src="media/photos/photo_18.jpg" alt="Photo 18" loading="lazy">
                     <div class="gallery-item-overlay"><span>#18</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_19.jpg" data-caption="Владимир Нагорянский #19">
-                    <img src="/media/photos/photo_19.jpg" alt="Photo 19" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_19.jpg" data-caption="Владимир Нагорянский #19">
+                    <img src="media/photos/photo_19.jpg" alt="Photo 19" loading="lazy">
                     <div class="gallery-item-overlay"><span>#19</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_20.jpg" data-caption="Владимир Нагорянский #20">
-                    <img src="/media/photos/photo_20.jpg" alt="Photo 20" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_20.jpg" data-caption="Владимир Нагорянский #20">
+                    <img src="media/photos/photo_20.jpg" alt="Photo 20" loading="lazy">
                     <div class="gallery-item-overlay"><span>#20</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_21.jpg" data-caption="Владимир Нагорянский #21">
-                    <img src="/media/photos/photo_21.jpg" alt="Photo 21" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_21.jpg" data-caption="Владимир Нагорянский #21">
+                    <img src="media/photos/photo_21.jpg" alt="Photo 21" loading="lazy">
                     <div class="gallery-item-overlay"><span>#21</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_22.jpg" data-caption="Владимир Нагорянский #22">
-                    <img src="/media/photos/photo_22.jpg" alt="Photo 22" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_22.jpg" data-caption="Владимир Нагорянский #22">
+                    <img src="media/photos/photo_22.jpg" alt="Photo 22" loading="lazy">
                     <div class="gallery-item-overlay"><span>#22</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_23.jpg" data-caption="Владимир Нагорянский #23">
-                    <img src="/media/photos/photo_23.jpg" alt="Photo 23" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_23.jpg" data-caption="Владимир Нагорянский #23">
+                    <img src="media/photos/photo_23.jpg" alt="Photo 23" loading="lazy">
                     <div class="gallery-item-overlay"><span>#23</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_24.jpg" data-caption="Владимир Нагорянский #24">
-                    <img src="/media/photos/photo_24.jpg" alt="Photo 24" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_24.jpg" data-caption="Владимир Нагорянский #24">
+                    <img src="media/photos/photo_24.jpg" alt="Photo 24" loading="lazy">
                     <div class="gallery-item-overlay"><span>#24</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_25.jpg" data-caption="Владимир Нагорянский #25">
-                    <img src="/media/photos/photo_25.jpg" alt="Photo 25" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_25.jpg" data-caption="Владимир Нагорянский #25">
+                    <img src="media/photos/photo_25.jpg" alt="Photo 25" loading="lazy">
                     <div class="gallery-item-overlay"><span>#25</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_26.jpg" data-caption="Владимир Нагорянский #26">
-                    <img src="/media/photos/photo_26.jpg" alt="Photo 26" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_26.jpg" data-caption="Владимир Нагорянский #26">
+                    <img src="media/photos/photo_26.jpg" alt="Photo 26" loading="lazy">
                     <div class="gallery-item-overlay"><span>#26</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_27.jpg" data-caption="Владимир Нагорянский #27">
-                    <img src="/media/photos/photo_27.jpg" alt="Photo 27" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_27.jpg" data-caption="Владимир Нагорянский #27">
+                    <img src="media/photos/photo_27.jpg" alt="Photo 27" loading="lazy">
                     <div class="gallery-item-overlay"><span>#27</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_28.jpg" data-caption="Владимир Нагорянский #28">
-                    <img src="/media/photos/photo_28.jpg" alt="Photo 28" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_28.jpg" data-caption="Владимир Нагорянский #28">
+                    <img src="media/photos/photo_28.jpg" alt="Photo 28" loading="lazy">
                     <div class="gallery-item-overlay"><span>#28</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_29.jpg" data-caption="Владимир Нагорянский #29">
-                    <img src="/media/photos/photo_29.jpg" alt="Photo 29" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_29.jpg" data-caption="Владимир Нагорянский #29">
+                    <img src="media/photos/photo_29.jpg" alt="Photo 29" loading="lazy">
                     <div class="gallery-item-overlay"><span>#29</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_30.jpg" data-caption="Владимир Нагорянский #30">
-                    <img src="/media/photos/photo_30.jpg" alt="Photo 30" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_30.jpg" data-caption="Владимир Нагорянский #30">
+                    <img src="media/photos/photo_30.jpg" alt="Photo 30" loading="lazy">
                     <div class="gallery-item-overlay"><span>#30</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_31.jpg" data-caption="Владимир Нагорянский #31">
-                    <img src="/media/photos/photo_31.jpg" alt="Photo 31" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_31.jpg" data-caption="Владимир Нагорянский #31">
+                    <img src="media/photos/photo_31.jpg" alt="Photo 31" loading="lazy">
                     <div class="gallery-item-overlay"><span>#31</span></div>
                 </div>
-                <div class="gallery-item" data-full="/media/photos/photo_32.jpg" data-caption="Владимир Нагорянский #32">
-                    <img src="/media/photos/photo_32.jpg" alt="Photo 32" loading="lazy">
+                <div class="gallery-item" data-full="media/photos/photo_32.jpg" data-caption="Владимир Нагорянский #32">
+                    <img src="media/photos/photo_32.jpg" alt="Photo 32" loading="lazy">
                     <div class="gallery-item-overlay"><span>#32</span></div>
                 </div>
             </div>
@@ -1525,8 +1606,8 @@
             <h2 class="section-title">Записи схваток</h2>
             <div class="fights-scroll">
                 <div class="fights-card">
-                    <video controls preload="none" poster="/media/photos/photo_01.jpg">
-                        <source src="/media/videos/fight_1610.mp4" type="video/mp4">
+                    <video controls preload="none" poster="media/photos/photo_01.jpg">
+                        <source src="media/videos/fight_1610.mp4" type="video/mp4">
                     </video>
                     <div class="fights-card-info">
                         <h3>Бой #1</h3>
@@ -1534,8 +1615,8 @@
                     </div>
                 </div>
                 <div class="fights-card">
-                    <video controls preload="none" poster="/media/photos/photo_06.jpg">
-                        <source src="/media/videos/fight_1611.mp4" type="video/mp4">
+                    <video controls preload="none" poster="media/photos/photo_06.jpg">
+                        <source src="media/videos/fight_1611.mp4" type="video/mp4">
                     </video>
                     <div class="fights-card-info">
                         <h3>Бой #2</h3>
@@ -1543,8 +1624,8 @@
                     </div>
                 </div>
                 <div class="fights-card">
-                    <video controls preload="none" poster="/media/photos/photo_10.jpg">
-                        <source src="/media/videos/fight_1612.mp4" type="video/mp4">
+                    <video controls preload="none" poster="media/photos/photo_10.jpg">
+                        <source src="media/videos/fight_1612.mp4" type="video/mp4">
                     </video>
                     <div class="fights-card-info">
                         <h3>Бой #3</h3>
@@ -1552,8 +1633,8 @@
                     </div>
                 </div>
                 <div class="fights-card">
-                    <video controls preload="none" poster="/media/photos/photo_15.jpg">
-                        <source src="/media/videos/fight_1613.mp4" type="video/mp4">
+                    <video controls preload="none" poster="media/photos/photo_15.jpg">
+                        <source src="media/videos/fight_1613.mp4" type="video/mp4">
                     </video>
                     <div class="fights-card-info">
                         <h3>Бой #4</h3>
@@ -1561,8 +1642,8 @@
                     </div>
                 </div>
                 <div class="fights-card">
-                    <video controls preload="none" poster="/media/photos/photo_20.jpg">
-                        <source src="/media/videos/fight_7429.mp4" type="video/mp4">
+                    <video controls preload="none" poster="media/photos/photo_20.jpg">
+                        <source src="media/videos/fight_7429.mp4" type="video/mp4">
                     </video>
                     <div class="fights-card-info">
                         <h3>Бой #5</h3>
@@ -1644,21 +1725,102 @@
                 </a>
             </div>
             <div class="press-screenshots">
-                <div class="press-screenshot-card" data-full="/media/chatgpt_1.png" data-caption="ChatGPT Анализ #1">
-                    <img src="/media/chatgpt_1.png" alt="ChatGPT анализ #1" loading="lazy">
+                <div class="press-screenshot-card" data-full="media/chatgpt_1.png" data-caption="ChatGPT Анализ #1">
+                    <img src="media/chatgpt_1.png" alt="ChatGPT анализ #1" loading="lazy">
                     <div class="press-screenshot-label">ChatGPT Анализ #1</div>
                 </div>
-                <div class="press-screenshot-card" data-full="/media/chatgpt_2.png" data-caption="ChatGPT Анализ #2">
-                    <img src="/media/chatgpt_2.png" alt="ChatGPT анализ #2" loading="lazy">
+                <div class="press-screenshot-card" data-full="media/chatgpt_2.png" data-caption="ChatGPT Анализ #2">
+                    <img src="media/chatgpt_2.png" alt="ChatGPT анализ #2" loading="lazy">
                     <div class="press-screenshot-label">ChatGPT Анализ #2</div>
                 </div>
-                <div class="press-screenshot-card" data-full="/media/chatgpt_3.png" data-caption="ChatGPT Анализ #3">
-                    <img src="/media/chatgpt_3.png" alt="ChatGPT анализ #3" loading="lazy">
+                <div class="press-screenshot-card" data-full="media/chatgpt_3.png" data-caption="ChatGPT Анализ #3">
+                    <img src="media/chatgpt_3.png" alt="ChatGPT анализ #3" loading="lazy">
                     <div class="press-screenshot-label">ChatGPT Анализ #3</div>
                 </div>
-                <div class="press-screenshot-card" data-full="/media/opencode_screenshot.png" data-caption="OpenCode Сессия">
-                    <img src="/media/opencode_screenshot.png" alt="OpenCode Screenshot" loading="lazy">
+                <div class="press-screenshot-card" data-full="media/opencode_screenshot.png" data-caption="OpenCode Сессия">
+                    <img src="media/opencode_screenshot.png" alt="OpenCode Screenshot" loading="lazy">
                     <div class="press-screenshot-label">OpenCode Сессия</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ARTICLES ==================== -->
+    <section class="section articles reveal" id="articles">
+        <div class="container">
+            <span class="section-label">Статьи для СМИ</span>
+            <h2 class="section-title">Готовые публикации</h2>
+            <p style="color:var(--text-muted);font-size:15px;line-height:1.6;max-width:700px;margin-bottom:40px;">10 статей для размещения на ведущих площадках — от региональных СМИ до VC.ru и Sports.ru. Все тексты написаны на основе фактов из биографии.</p>
+            <div class="articles-grid">
+                <!-- 1. Региональное СМИ: Формальная заметка -->
+                <div class="article-card">
+                    <span class="article-platform">Региональное СМИ</span>
+                    <h4>Москвич Владимир Нагорянский — первая ракетка Северной Америки по бразильскому джиу-джитсу</h4>
+                    <p>Формальная заметка для новостной ленты регионального издания. Факты, регалии, ближайший старт — классический формат городской газеты.</p>
+                    <span class="article-meta">Формат: новостная заметка · ~350 слов</span>
+                </div>
+                <!-- 2. Региональное СМИ: Живая заметка -->
+                <div class="article-card">
+                    <span class="article-platform">Региональное СМИ</span>
+                    <h4>Как парень с турецкого пляжа стал лучшим в Америке: 21-летний москвич возглавил рейтинг AJP</h4>
+                    <p>Живой текст с человеческой историей. Пляж в Турции, провал 2022 года, восстановление и мировой рейтинг. Для изданий, которым нужна драма.</p>
+                    <span class="article-meta">Формат: очерк · ~400 слов</span>
+                </div>
+                <!-- 3. Дзен: История преодоления -->
+                <div class="article-card">
+                    <span class="article-platform">Дзен</span>
+                    <h4>Тренер сказал перевести его в женскую категорию. Через четыре года он стал первым в Америке</h4>
+                    <p>История преодоления для Яндекс.Дзен — эмоциональный нарратив с кликбейт-заголовком. От потери сознания до вершины рейтинга.</p>
+                    <span class="article-meta">Формат: сторителлинг · ~500 слов</span>
+                </div>
+                <!-- 4. Дзен: Вариант 2 -->
+                <div class="article-card">
+                    <span class="article-platform">Дзен</span>
+                    <h4>«Владимира — в женскую категорию». Что было после этих слов</h4>
+                    <p>Второй вариант для Дзен. Более сжатый, с акцентом на смену окружения и молчаливую работу. Заголовок-триггер.</p>
+                    <span class="article-meta">Формат: сторителлинг · ~450 слов</span>
+                </div>
+                <!-- 5. VC.ru: Колонка #1 -->
+                <div class="article-card">
+                    <span class="article-platform">VC.ru</span>
+                    <h4>Почему молодёжь выбирает BJJ</h4>
+                    <p>Колонка от лица Владимира: 5 причин, почему поколение 14-25 лет приходит в бразильское джиу-джитсу. Без ударов, быстрый вход в соревнования, география турниров.</p>
+                    <span class="article-meta">Формат: колонка · ~550 слов</span>
+                </div>
+                <!-- 6. VC.ru: Колонка #2 -->
+                <div class="article-card">
+                    <span class="article-platform">VC.ru</span>
+                    <h4>Что я понял за три года в BJJ</h4>
+                    <p>Колонка от лица Владимира: поражения не делают сильнее, смена окружения решает, талант не главное, страх никуда не уходит. Четыре года на пересборку.</p>
+                    <span class="article-meta">Формат: колонка · ~600 слов</span>
+                </div>
+                <!-- 7. Интервью-лонгрид -->
+                <div class="article-card">
+                    <span class="article-platform">Sports.ru / Championat.com</span>
+                    <h4>«Мне сказали идти в женскую категорию». Владимир Нагорянский — о поражении, смене тренера и подготовке к чемпионату мира</h4>
+                    <p>Полноценное интервью-лонгрид в формате вопрос-ответ. Разговор о 2022 годе, новой команде, подготовке к ЧМ 29 мая.</p>
+                    <span class="article-meta">Формат: интервью · ~800 слов</span>
+                </div>
+                <!-- 8. Новостная заметка -->
+                <div class="article-card">
+                    <span class="article-platform">Ленты новостей / Региональные СМИ</span>
+                    <h4>21-летний москвич возглавил рейтинг Северной Америки по бразильскому джиу-джитсу</h4>
+                    <p>Краткая новостная заметка для лент новостей и региональных изданий. Сухие факты, все медали, ближайший старт.</p>
+                    <span class="article-meta">Формат: новость · ~250 слов</span>
+                </div>
+                <!-- 9. Деловая статья -->
+                <div class="article-card">
+                    <span class="article-platform">VC.ru / Бизнес-издания</span>
+                    <h4>Три проекта одного спортсмена: как Владимир Нагорянский совмещает BJJ, криптобизнес и личный бренд</h4>
+                    <p>Деловая статья: спорт как ядро, криптофраншиза как финансовая модель, соцсети как канал. Без пиар-команды и внешнего финансирования.</p>
+                    <span class="article-meta">Формат: бизнес-аналитика · ~700 слов</span>
+                </div>
+                <!-- 10. Личная заметка -->
+                <div class="article-card">
+                    <span class="article-platform">Дзен / Telegram</span>
+                    <h4>18 дней до чемпионата мира</h4>
+                    <p>Личная заметка от лица Владимира перед ЧМ. Две тренировки в день, разбор соперников, музыка как переключение. Никакой драмы — просто работа.</p>
+                    <span class="article-meta">Формат: дневник · ~300 слов</span>
                 </div>
             </div>
         </div>
@@ -1692,24 +1854,24 @@
             <div style="margin-top: 32px;">
                 <span class="section-label" style="margin-bottom:12px;display:block;">📊 Instagram Статистика</span>
                 <div class="insta-stats-row">
-                    <div class="insta-stat-card" data-full="/media/photos/photo_01.jpg" data-caption="Instagram Статистика #1">
-                        <img src="/media/photos/photo_01.jpg" alt="Instagram Stats 1" loading="lazy">
+                    <div class="insta-stat-card" data-full="media/photos/photo_01.jpg" data-caption="Instagram Статистика #1">
+                        <img src="media/photos/photo_01.jpg" alt="Instagram Stats 1" loading="lazy">
                         <div class="insta-stat-label">Статистика #1</div>
                     </div>
-                    <div class="insta-stat-card" data-full="/media/photos/photo_02.jpg" data-caption="Instagram Статистика #2">
-                        <img src="/media/photos/photo_02.jpg" alt="Instagram Stats 2" loading="lazy">
+                    <div class="insta-stat-card" data-full="media/photos/photo_02.jpg" data-caption="Instagram Статистика #2">
+                        <img src="media/photos/photo_02.jpg" alt="Instagram Stats 2" loading="lazy">
                         <div class="insta-stat-label">Статистика #2</div>
                     </div>
-                    <div class="insta-stat-card" data-full="/media/photos/photo_03.jpg" data-caption="Instagram Статистика #3">
-                        <img src="/media/photos/photo_03.jpg" alt="Instagram Stats 3" loading="lazy">
+                    <div class="insta-stat-card" data-full="media/photos/photo_03.jpg" data-caption="Instagram Статистика #3">
+                        <img src="media/photos/photo_03.jpg" alt="Instagram Stats 3" loading="lazy">
                         <div class="insta-stat-label">Статистика #3</div>
                     </div>
-                    <div class="insta-stat-card" data-full="/media/photos/photo_04.jpg" data-caption="Instagram Статистика #4">
-                        <img src="/media/photos/photo_04.jpg" alt="Instagram Stats 4" loading="lazy">
+                    <div class="insta-stat-card" data-full="media/photos/photo_04.jpg" data-caption="Instagram Статистика #4">
+                        <img src="media/photos/photo_04.jpg" alt="Instagram Stats 4" loading="lazy">
                         <div class="insta-stat-label">Статистика #4</div>
                     </div>
-                    <div class="insta-stat-card" data-full="/media/photos/photo_05.jpg" data-caption="Instagram Статистика #5">
-                        <img src="/media/photos/photo_05.jpg" alt="Instagram Stats 5" loading="lazy">
+                    <div class="insta-stat-card" data-full="media/photos/photo_05.jpg" data-caption="Instagram Статистика #5">
+                        <img src="media/photos/photo_05.jpg" alt="Instagram Stats 5" loading="lazy">
                         <div class="insta-stat-label">Статистика #5</div>
                     </div>
                 </div>
@@ -1771,21 +1933,21 @@
                     достижения, фотографии высокого разрешения, условия партнёрства.
                 </p>
                 <div class="mediakit-file">nagoryansky_media_kit.pdf</div>
-                <a href="/media/nagoryansky_media_kit.pdf" class="btn btn-gold" download>
+                <a href="media/nagoryansky_media_kit.pdf" class="btn btn-gold" download>
                     Скачать медиа-кит
                 </a>
             </div>
             <div style="margin-top: 24px;">
                 <span class="section-label" style="margin-bottom:12px;display:block;text-align:center;">📄 Дополнительные материалы</span>
                 <div class="pdf-grid">
-                    <a href="/media/chatgpt_analysis.pdf" class="pdf-card" download>
+                    <a href="media/chatgpt_analysis.pdf" class="pdf-card" download>
                         <span class="pdf-card-icon">🤖</span>
                         <div>
                             <div class="pdf-card-name">ChatGPT Анализ</div>
                             <div class="pdf-card-size">PDF · chatgpt_analysis.pdf</div>
                         </div>
                     </a>
-                    <a href="/media/opencode_session.pdf" class="pdf-card" download>
+                    <a href="media/opencode_session.pdf" class="pdf-card" download>
                         <span class="pdf-card-icon">💻</span>
                         <div>
                             <div class="pdf-card-name">OpenCode Сессия</div>

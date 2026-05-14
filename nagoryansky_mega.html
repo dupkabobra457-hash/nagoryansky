@@ -3,13 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Владимир Нагорянский — #1 BJJ-борец Северной Америки, чемпион мира AJP. Спортсмен, предприниматель, крипто-амбассадор.">
-<meta name="keywords" content="Владимир Нагорянский, BJJ, бразильское джиу-джитсу, AJP, чемпион, спонсорство">
-<meta property="og:title" content="Владимир Нагорянский | BJJ #1 Северная Америка">
-<meta property="og:description" content="Чемпион Катара, Испании, Латвии, Швейцарии. #1 AJP Северная Америка, #2 Мир.">
-<meta property="og:image" content="/media/vladimir_cover.jpg">
+<meta name="description" content="Официальный сайт Владимира Нагорянского — №1 BJJ Северной Америки, №2 мира. Чемпион Катара, Испании, Латвии, Швейцарии. Статьи, фото, видео.">
+<meta name="keywords" content="Владимир Нагорянский, Vladimir Nagoryansky, BJJ, бразильское джиу-джитсу, AJP, чемпион мира, синий пояс, спонсорство, Baseball Bat, джиу-джитсу Россия">
+<meta name="author" content="Владимир Нагорянский">
+<meta property="og:title" content="Владимир Нагорянский | BJJ #1 Северная Америка | Официальный сайт">
+<meta property="og:description" content="Официальный сайт Владимира Нагорянского — №1 BJJ Северной Америки, №2 мира. Чемпион Катара, Испании, Латвии, Швейцарии.">
+<meta property="og:image" content="https://nagoryansky.github.io/media/vladimir_cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://nagoryansky.github.io">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Владимир Нагорянский | BJJ #1 Северная Америка">
+<meta name="twitter:description" content="Официальный сайт Владимира Нагорянского — №1 BJJ, №2 мира.">
+<meta name="twitter:image" content="https://nagoryansky.github.io/media/vladimir_cover.jpg">
+<link rel="canonical" href="https://nagoryansky.github.io">
+<meta name="yandex-verification" content="ПОЛУЧИТЬ_В_ВЕБМАСТЕРЕ">
+<meta name="google-site-verification" content="ПОЛУЧИТЬ_В_SEARCH_CONSOLE">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥋</text></svg>">
 <title>Владимир Нагорянский | BJJ #1 в Северной Америке | Официальный сайт</title>
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Владимир Нагорянский",
+  "alternateName": ["Vladimir Nagoryansky", "Baseball Bat"],
+  "description": "Российский спортсмен по бразильскому джиу-джитсу. №1 рейтинга AJP в Северной Америке, №2 в мировом рейтинге.",
+  "url": "https://nagoryansky.github.io",
+  "image": "/media/vladimir_profile.jpg",
+  "sameAs": [
+    "https://www.instagram.com/the_baseball_bat_fighter",
+    "https://youtube.com/@the_baseball_bat",
+    "https://t.me/the_baseball_bat",
+    "https://ajptour.com/en/profile/183810"
+  ],
+  "nationality": "Россия",
+  "knowsAbout": ["Бразильское джиу-джитсу", "BJJ", "Спорт"]
+}
+</script>
 
 <style>
 /* ═══════════════════════════════════════════
@@ -811,6 +845,76 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.5); }
   color: var(--white-dim);
 }
 
+/* ═══════ ARTICLES SECTION ═══════ */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.article-card {
+  background: var(--black-card);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.article-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+.article-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(201,168,76,0.3);
+  box-shadow: 0 8px 30px rgba(201,168,76,0.1);
+}
+.article-card:hover::after { transform: scaleX(1); }
+
+.article-platform {
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: 10px;
+  background: rgba(201,168,76,0.1);
+  padding: 3px 10px;
+  border-radius: 20px;
+  align-self: flex-start;
+}
+
+.article-card h4 {
+  font-size: 17px;
+  margin-bottom: 10px;
+  color: var(--white);
+  font-family: var(--font-display);
+  line-height: 1.3;
+}
+
+.article-card p {
+  font-size: 13px;
+  color: var(--white-dim);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.article-meta {
+  margin-top: 16px;
+  font-size: 11px;
+  color: rgba(201,168,76,0.6);
+  letter-spacing: 1px;
+}
+
 /* ═══════ CONTACT FORM ═══════ */
 .contact-grid {
   display: grid;
@@ -957,6 +1061,7 @@ footer {
   .youtube-grid { grid-template-columns: 1fr; }
   
   .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .articles-grid { grid-template-columns: 1fr; }
   
   .countdown-digits { gap: 12px; }
   .countdown-digit { min-width: 60px; }
@@ -991,6 +1096,7 @@ footer {
       <li><a href="#gallery">Галерея</a></li>
       <li><a href="#videos">Видео</a></li>
       <li><a href="#press">Пресса</a></li>
+      <li><a href="#articles">Статьи</a></li>
       <li><a href="#sponsor">Спонсору</a></li>
       <li><a href="#contact">Контакты</a></li>
     </ul>
@@ -999,7 +1105,7 @@ footer {
 
 <!-- ═══════════════ HERO ═══════════════ -->
 <section class="hero" id="hero">
-  <img class="hero-bg" src="/media/vladimir_cover.jpg" alt="Владимир Нагорянский" onerror="this.style.display='none'">
+  <img class="hero-bg" src="media/vladimir_cover.jpg" alt="Владимир Нагорянский" onerror="this.style.display='none'">
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-badge">🥋 Бразильское Джиу-Джитсу</div>
@@ -1237,11 +1343,11 @@ footer {
   <div style="margin-top: 40px;" class="reveal">
     <h3 style="color:var(--white); margin-bottom:16px; font-size:16px;">📊 Скриншоты статистики Instagram*</h3>
     <div style="display:flex; gap:12px; overflow-x:auto; padding-bottom:12px;">
-      <img src="/media/photos/photo_01.jpg" style="height:300px; border-radius:8px;" alt="Статистика 1" onclick="openLightbox(this.src)" loading="lazy">
-      <img src="/media/photos/photo_02.jpg" style="height:300px; border-radius:8px;" alt="Статистика 2" onclick="openLightbox(this.src)" loading="lazy">
-      <img src="/media/photos/photo_03.jpg" style="height:300px; border-radius:8px;" alt="Статистика 3" onclick="openLightbox(this.src)" loading="lazy">
-      <img src="/media/photos/photo_04.jpg" style="height:300px; border-radius:8px;" alt="Статистика 4" onclick="openLightbox(this.src)" loading="lazy">
-      <img src="/media/photos/photo_05.jpg" style="height:300px; border-radius:8px;" alt="Статистика 5" onclick="openLightbox(this.src)" loading="lazy">
+      <img src="media/photos/photo_01.jpg" style="height:300px; border-radius:8px;" alt="Статистика 1" onclick="openLightbox(this.src)" loading="lazy">
+      <img src="media/photos/photo_02.jpg" style="height:300px; border-radius:8px;" alt="Статистика 2" onclick="openLightbox(this.src)" loading="lazy">
+      <img src="media/photos/photo_03.jpg" style="height:300px; border-radius:8px;" alt="Статистика 3" onclick="openLightbox(this.src)" loading="lazy">
+      <img src="media/photos/photo_04.jpg" style="height:300px; border-radius:8px;" alt="Статистика 4" onclick="openLightbox(this.src)" loading="lazy">
+      <img src="media/photos/photo_05.jpg" style="height:300px; border-radius:8px;" alt="Статистика 5" onclick="openLightbox(this.src)" loading="lazy">
     </div>
   </div>
 </section>
@@ -1279,8 +1385,8 @@ footer {
   <!-- Own Videos -->
   <div class="video-grid reveal">
     <div class="video-card">
-      <video controls preload="metadata" poster="/media/vladimir_cover.jpg">
-        <source src="/media/videos/fight_1610.mp4" type="video/mp4">
+      <video controls preload="metadata" poster="media/vladimir_cover.jpg">
+        <source src="media/videos/fight_1610.mp4" type="video/mp4">
       </video>
       <div class="video-info">
         <h4>⚡ Победа в полуфинале</h4>
@@ -1289,7 +1395,7 @@ footer {
     </div>
     <div class="video-card">
       <video controls preload="metadata">
-        <source src="/media/videos/fight_1611.mp4" type="video/mp4">
+        <source src="media/videos/fight_1611.mp4" type="video/mp4">
       </video>
       <div class="video-info">
         <h4>🌍 Панорама турнира</h4>
@@ -1298,7 +1404,7 @@ footer {
     </div>
     <div class="video-card">
       <video controls preload="metadata">
-        <source src="/media/videos/fight_1612.mp4" type="video/mp4">
+        <source src="media/videos/fight_1612.mp4" type="video/mp4">
       </video>
       <div class="video-info">
         <h4>🥋 Бой с Kasumov</h4>
@@ -1307,7 +1413,7 @@ footer {
     </div>
     <div class="video-card">
       <video controls preload="metadata">
-        <source src="/media/videos/fight_1613.mp4" type="video/mp4">
+        <source src="media/videos/fight_1613.mp4" type="video/mp4">
       </video>
       <div class="video-info">
         <h4>🏟️ Турнир «Отечество»</h4>
@@ -1316,7 +1422,7 @@ footer {
     </div>
     <div class="video-card">
       <video controls preload="metadata">
-        <source src="/media/videos/fight_7429.mp4" type="video/mp4">
+        <source src="media/videos/fight_7429.mp4" type="video/mp4">
       </video>
       <div class="video-info">
         <h4>💪 Январь 2026</h4>
@@ -1373,9 +1479,9 @@ footer {
       <h4>Анализ медийной стратегии</h4>
       <p>Результаты анализа поисковой выдачи, рекомендации по SERM и план публикаций для формирования медийного присутствия.</p>
       <div style="display:flex; gap:8px; margin-top:12px; flex-wrap:wrap;">
-        <img src="/media/chatgpt_1.png" style="height:80px; border-radius:4px; cursor:pointer;" onclick="openLightbox(this.src)" alt="ChatGPT анализ">
-        <img src="/media/chatgpt_2.png" style="height:80px; border-radius:4px; cursor:pointer;" onclick="openLightbox(this.src)" alt="ChatGPT анализ">
-        <img src="/media/chatgpt_3.png" style="height:80px; border-radius:4px; cursor:pointer;" onclick="openLightbox(this.src)" alt="ChatGPT анализ">
+        <img src="media/chatgpt_1.png" style="height:80px; border-radius:4px; cursor:pointer;" onclick="openLightbox(this.src)" alt="ChatGPT анализ">
+        <img src="media/chatgpt_2.png" style="height:80px; border-radius:4px; cursor:pointer;" onclick="openLightbox(this.src)" alt="ChatGPT анализ">
+        <img src="media/chatgpt_3.png" style="height:80px; border-radius:4px; cursor:pointer;" onclick="openLightbox(this.src)" alt="ChatGPT анализ">
       </div>
     </div>
 
@@ -1383,7 +1489,7 @@ footer {
       <div class="press-source">OpenCode · Сессия</div>
       <h4>Планирование медиа-кампании</h4>
       <p>Полная сессия планирования в OpenCode: стратегия, бюджет до 500 000 ₽, выбор площадок, копирайтинг.</p>
-      <img src="/media/opencode_screenshot.png" style="width:100%; border-radius:4px; margin-top:12px; cursor:pointer;" onclick="openLightbox(this.src)" alt="OpenCode">
+      <img src="media/opencode_screenshot.png" style="width:100%; border-radius:4px; margin-top:12px; cursor:pointer;" onclick="openLightbox(this.src)" alt="OpenCode">
     </div>
   </div>
 
@@ -1393,13 +1499,104 @@ footer {
       <div class="card-icon">📄</div>
       <h3>Анализ поисковой выдачи</h3>
       <p>PDF-отчёт ChatGPT с анализом текущего присутствия в Яндексе и Google, рекомендациями по SERM.</p>
-      <a href="/media/chatgpt_analysis.pdf" download class="btn btn-outline" style="margin-top:12px;font-size:13px;">Скачать PDF</a>
+      <a href="media/chatgpt_analysis.pdf" download class="btn btn-outline" style="margin-top:12px;font-size:13px;">Скачать PDF</a>
     </div>
     <div class="card">
       <div class="card-icon">📋</div>
       <h3>Сессия OpenCode</h3>
       <p>Полный скриншот сессии планирования медиа-кампании — стратегия, бюджет, площадки.</p>
-      <a href="/media/opencode_session.pdf" download class="btn btn-outline" style="margin-top:12px;font-size:13px;">Скачать PDF</a>
+      <a href="media/opencode_session.pdf" download class="btn btn-outline" style="margin-top:12px;font-size:13px;">Скачать PDF</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ARTICLES ═══════════════ -->
+<section class="section" id="articles" style="background: rgba(255,255,255,0.01);">
+  <div class="reveal">
+    <div class="section-label">Статьи для СМИ</div>
+    <h2 class="section-title">Готовые публикации</h2>
+    <p class="section-subtitle">10 статей для размещения на ведущих площадках — от региональных СМИ до VC.ru и Sports.ru. Все тексты написаны на основе фактов из биографии.</p>
+  </div>
+
+  <div class="articles-grid reveal">
+    <!-- 1. Региональное СМИ: Формальная заметка -->
+    <div class="article-card">
+      <span class="article-platform">Региональное СМИ</span>
+      <h4>Москвич Владимир Нагорянский — первая ракетка Северной Америки по бразильскому джиу-джитсу</h4>
+      <p>Формальная заметка для новостной ленты регионального издания. Факты, регалии, ближайший старт — классический формат городской газеты.</p>
+      <span class="article-meta">Формат: новостная заметка · ~350 слов</span>
+    </div>
+
+    <!-- 2. Региональное СМИ: Живая заметка -->
+    <div class="article-card">
+      <span class="article-platform">Региональное СМИ</span>
+      <h4>Как парень с турецкого пляжа стал лучшим в Америке: 21-летний москвич возглавил рейтинг AJP</h4>
+      <p>Живой текст с человеческой историей. Пляж в Турции, провал 2022 года, восстановление и мировой рейтинг. Для изданий, которым нужна драма.</p>
+      <span class="article-meta">Формат: очерк · ~400 слов</span>
+    </div>
+
+    <!-- 3. Дзен: История преодоления -->
+    <div class="article-card">
+      <span class="article-platform">Дзен</span>
+      <h4>Тренер сказал перевести его в женскую категорию. Через четыре года он стал первым в Америке</h4>
+      <p>История преодоления для Яндекс.Дзен — эмоциональный нарратив с кликбейт-заголовком. От потери сознания до вершины рейтинга.</p>
+      <span class="article-meta">Формат: сторителлинг · ~500 слов</span>
+    </div>
+
+    <!-- 4. Дзен: Вариант 2 -->
+    <div class="article-card">
+      <span class="article-platform">Дзен</span>
+      <h4>«Владимира — в женскую категорию». Что было после этих слов</h4>
+      <p>Второй вариант для Дзен. Более сжатый, с акцентом на смену окружения и молчаливую работу. Заголовок-триггер.</p>
+      <span class="article-meta">Формат: сторителлинг · ~450 слов</span>
+    </div>
+
+    <!-- 5. VC.ru: Колонка #1 -->
+    <div class="article-card">
+      <span class="article-platform">VC.ru</span>
+      <h4>Почему молодёжь выбирает BJJ</h4>
+      <p>Колонка от лица Владимира: 5 причин, почему поколение 14-25 лет приходит в бразильское джиу-джитсу. Без ударов, быстрый вход в соревнования, география турниров.</p>
+      <span class="article-meta">Формат: колонка · ~550 слов</span>
+    </div>
+
+    <!-- 6. VC.ru: Колонка #2 -->
+    <div class="article-card">
+      <span class="article-platform">VC.ru</span>
+      <h4>Что я понял за три года в BJJ</h4>
+      <p>Колонка от лица Владимира: поражения не делают сильнее, смена окружения решает, талант не главное, страх никуда не уходит. Четыре года на пересборку.</p>
+      <span class="article-meta">Формат: колонка · ~600 слов</span>
+    </div>
+
+    <!-- 7. Интервью-лонгрид -->
+    <div class="article-card">
+      <span class="article-platform">Sports.ru / Championat.com</span>
+      <h4>«Мне сказали идти в женскую категорию». Владимир Нагорянский — о поражении, смене тренера и подготовке к чемпионату мира</h4>
+      <p>Полноценное интервью-лонгрид в формате вопрос-ответ. Разговор о 2022 годе, новой команде, подготовке к ЧМ 29 мая.</p>
+      <span class="article-meta">Формат: интервью · ~800 слов</span>
+    </div>
+
+    <!-- 8. Новостная заметка -->
+    <div class="article-card">
+      <span class="article-platform">Ленты новостей / Региональные СМИ</span>
+      <h4>21-летний москвич возглавил рейтинг Северной Америки по бразильскому джиу-джитсу</h4>
+      <p>Краткая новостная заметка для лент новостей и региональных изданий. Сухие факты, все медали, ближайший старт.</p>
+      <span class="article-meta">Формат: новость · ~250 слов</span>
+    </div>
+
+    <!-- 9. Деловая статья -->
+    <div class="article-card">
+      <span class="article-platform">VC.ru / Бизнес-издания</span>
+      <h4>Три проекта одного спортсмена: как Владимир Нагорянский совмещает BJJ, криптобизнес и личный бренд</h4>
+      <p>Деловая статья: спорт как ядро, криптофраншиза как финансовая модель, соцсети как канал. Без пиар-команды и внешнего финансирования.</p>
+      <span class="article-meta">Формат: бизнес-аналитика · ~700 слов</span>
+    </div>
+
+    <!-- 10. Личная заметка -->
+    <div class="article-card">
+      <span class="article-platform">Дзен / Telegram</span>
+      <h4>18 дней до чемпионата мира</h4>
+      <p>Личная заметка от лица Владимира перед ЧМ. Две тренировки в день, разбор соперников, музыка как переключение. Никакой драмы — просто работа.</p>
+      <span class="article-meta">Формат: дневник · ~300 слов</span>
     </div>
   </div>
 </section>
@@ -1434,7 +1631,7 @@ footer {
     <div class="media-kit-icon">📦</div>
     <h3 style="font-family:var(--font-display); font-size:24px; margin-bottom:8px;">Медиа-кит</h3>
     <p style="color:var(--white-dim); margin-bottom:24px;">Полный набор материалов для спонсоров: презентация, статистика, фото, варианты интеграции.</p>
-    <a href="/media/chatgpt_analysis.pdf" download class="btn btn-gold">Скачать медиа-кит 📥</a>
+    <a href="media/chatgpt_analysis.pdf" download class="btn btn-gold">Скачать медиа-кит 📥</a>
   </div>
 
   <div class="card-grid reveal" style="margin-top:32px;">
