@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Владимир Нагорянский — #1 BJJ-борец Северной Америки, чемпион мира AJP. Спортсмен, предприниматель, крипто-амбассадор.">
+<meta name="keywords" content="Владимир Нагорянский, BJJ, бразильское джиу-джитсу, AJP, чемпион, спонсорство">
+<meta property="og:title" content="Владимир Нагорянский | BJJ #1 Северная Америка">
+<meta property="og:description" content="Чемпион Катара, Испании, Латвии, Швейцарии. #1 AJP Северная Америка, #2 Мир.">
+<meta property="og:image" content="/media/vladimir_cover.jpg">
+<meta property="og:type" content="website">
+<title>Владимир Нагорянский | BJJ #1 в Северной Америке | Официальный сайт</title>
+
+<style>
+/* ═══════════════════════════════════════════
+   NAGORYANSKY MEGA SITE — Premium Edition
+   All sections, all media, all data
+   ═══════════════════════════════════════════ */
+
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8D48B;
+  --gold-dark: #8B6914;
+  --black: #0A0A0A;
+  --black-soft: #141414;
+  --black-card: #1A1A1A;
+  --white: #F5F5F5;
+  --white-dim: #A0A0A0;
+  --red: #C41E3A;
+  --accent: #C9A84C;
+  --font-display: 'Georgia', 'Times New Roman', serif;
+  --font-body: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --radius: 12px;
+  --transition: 0.35s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ═══════ PARTICLES BACKGROUND ═══════ */
+#particles {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ═══════ LOADER ═══════ */
+#loader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: var(--black);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s, visibility 0.6s;
+}
+#loader.hidden { opacity: 0; visibility: hidden; }
+.loader-ring {
+  width: 60px; height: 60px;
+  border: 3px solid rgba(201,168,76,0.2);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ═══════ NAVIGATION ═══════ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(10,10,10,0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+  padding: 0 24px;
+  transition: all 0.3s;
+}
+nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.5); }
+
+.nav-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+.nav-logo:hover { color: var(--gold-light); }
+
+.nav-links {
+  display: flex;
+  gap: 0;
+  list-style: none;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav-links::-webkit-scrollbar { display: none; }
+
+.nav-links a {
+  color: var(--white-dim);
+  text-decoration: none;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+  border-radius: 6px;
+  white-space: nowrap;
+  position: relative;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--gold);
+}
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background: var(--gold);
+  border-radius: 1px;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+/* ═══════ SECTIONS ═══════ */
+.section {
+  position: relative;
+  z-index: 1;
+  padding: 100px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-label {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 12px;
+  color: var(--gold);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: bold;
+  margin-bottom: 16px;
+  line-height: 1.15;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-subtitle {
+  color: var(--white-dim);
+  font-size: 18px;
+  max-width: 600px;
+  margin-bottom: 48px;
+  line-height: 1.6;
+}
+
+/* ═══════ HERO ═══════ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  padding: 0 24px;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0.35;
+  z-index: 0;
+  filter: brightness(0.6);
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(ellipse at center, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.95) 100%);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 8px 24px;
+  border: 1px solid var(--gold);
+  border-radius: 50px;
+  color: var(--gold);
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 8vw, 80px);
+  font-weight: bold;
+  line-height: 1.05;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.8s ease-out 0.15s both;
+}
+
+.hero h1 .gold { color: var(--gold); }
+
+.hero p {
+  font-size: clamp(16px, 2.5vw, 20px);
+  color: var(--white-dim);
+  max-width: 600px;
+  margin: 0 auto 40px;
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease-out 0.45s both;
+}
+
+.hero-stat {
+  text-align: center;
+}
+
+.hero-stat-value {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: bold;
+  color: var(--gold);
+}
+
+.hero-stat-label {
+  font-size: 12px;
+  color: var(--white-dim);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 4px;
+}
+
+.hero-cta {
+  margin-top: 48px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+/* ═══════ BUTTONS ═══════ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s;
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  color: var(--black);
+  box-shadow: 0 4px 20px rgba(201,168,76,0.3);
+}
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(201,168,76,0.4);
+}
+
+.btn-outline {
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+  background: transparent;
+}
+.btn-outline:hover {
+  background: rgba(201,168,76,0.1);
+  transform: translateY(-2px);
+}
+
+/* ═══════ COUNTDOWN ═══════ */
+.countdown-wrapper {
+  background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(201,168,76,0.02));
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: var(--radius);
+  padding: 40px;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.countdown-title {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+
+.countdown-digits {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.countdown-digit {
+  text-align: center;
+  min-width: 80px;
+}
+
+.countdown-num {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 6vw, 56px);
+  font-weight: bold;
+  color: var(--gold-light);
+  display: block;
+}
+
+.countdown-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--white-dim);
+  margin-top: 4px;
+}
+
+/* ═══════ CARDS ═══════ */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--black-card);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius);
+  padding: 32px;
+  transition: all 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px;
+  height: 0;
+  background: var(--gold);
+  transition: height 0.4s;
+}
+.card:hover::before { height: 100%; }
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(201,168,76,0.2);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+
+.card-icon {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.card h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: var(--gold);
+}
+
+.card p {
+  color: var(--white-dim);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ═══════ STATS BAR ═══════ */
+.stats-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2px;
+  background: rgba(255,255,255,0.04);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 40px 0;
+}
+
+.stat-item {
+  background: var(--black-card);
+  padding: 32px 24px;
+  text-align: center;
+  transition: all 0.3s;
+}
+.stat-item:hover { background: rgba(201,168,76,0.05); }
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--gold);
+  display: block;
+}
+
+.stat-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--white-dim);
+  margin-top: 8px;
+}
+
+/* ═══════ MEDALS ═══════ */
+.medal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.medal-card {
+  background: var(--black-card);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.3s;
+}
+.medal-card:hover {
+  border-color: rgba(201,168,76,0.3);
+  transform: translateX(4px);
+}
+
+.medal-icon {
+  font-size: 28px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.medal-gold-icon { background: rgba(201,168,76,0.15); }
+.medal-silver-icon { background: rgba(192,192,192,0.15); }
+.medal-bronze-icon { background: rgba(205,127,50,0.15); }
+
+.medal-info h4 {
+  font-size: 14px;
+  color: var(--white);
+  margin-bottom: 2px;
+}
+.medal-info span {
+  font-size: 12px;
+  color: var(--white-dim);
+}
+
+.medal-rank {
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+.medal-gold-rank { color: var(--gold); border: 1px solid var(--gold); }
+.medal-silver-rank { color: #C0C0C0; border: 1px solid #C0C0C0; }
+.medal-bronze-rank { color: #CD7F32; border: 1px solid #CD7F32; }
+
+/* ═══════ PHOTO GALLERY ═══════ */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 12px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 1;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.gallery-item:hover { transform: scale(1.03); }
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.gallery-item:hover img { transform: scale(1.1); }
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+}
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+
+.gallery-overlay span {
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* ═══════ LIGHTBOX ═══════ */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.95);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.lightbox.active { display: flex; }
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 8px;
+  cursor: default;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  color: var(--white);
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 2001;
+  width: 48px; height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  transition: background 0.3s;
+}
+.lightbox-close:hover { background: rgba(255,255,255,0.2); }
+
+.lightbox-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--white);
+  font-size: 40px;
+  cursor: pointer;
+  z-index: 2001;
+  width: 56px; height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  transition: background 0.3s;
+}
+.lightbox-nav:hover { background: rgba(255,255,255,0.2); }
+.lightbox-prev { left: 24px; }
+.lightbox-next { right: 24px; }
+
+.lightbox-counter {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--white-dim);
+  font-size: 14px;
+  z-index: 2001;
+}
+
+/* ═══════ VIDEO GRID ═══════ */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+}
+
+.video-card {
+  background: var(--black-card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.3s;
+}
+.video-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(201,168,76,0.3);
+}
+
+.video-card video {
+  width: 100%;
+  display: block;
+  background: #000;
+}
+
+.video-info {
+  padding: 16px 20px;
+}
+
+.video-info h4 {
+  font-size: 14px;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.video-info span {
+  font-size: 11px;
+  color: var(--white-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ═══════ YOUTUBE EMBEDS ═══════ */
+.youtube-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+}
+
+.youtube-card {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  background: #000;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.youtube-card iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ═══════ TIMELINE ═══════ */
+.timeline {
+  position: relative;
+  padding-left: 40px;
+  max-width: 700px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--gold), rgba(201,168,76,0.1));
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -33px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 3px solid var(--black);
+  box-shadow: 0 0 0 2px var(--gold);
+}
+
+.timeline-year {
+  font-size: 12px;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.timeline-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.timeline-desc {
+  font-size: 14px;
+  color: var(--white-dim);
+  line-height: 1.6;
+}
+
+/* ═══════ PRESS CARDS ═══════ */
+.press-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.press-card {
+  background: var(--black-card);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+.press-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 8px 30px rgba(201,168,76,0.15);
+}
+
+.press-source {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.press-card h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: var(--white);
+}
+
+.press-card p {
+  font-size: 13px;
+  color: var(--white-dim);
+  line-height: 1.6;
+}
+
+.press-date {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 11px;
+  color: var(--white-dim);
+}
+
+/* ═══════ CONTACT FORM ═══════ */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.contact-info h3 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  color: var(--white);
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.contact-link:hover {
+  border-color: var(--gold);
+  background: rgba(201,168,76,0.05);
+}
+
+.contact-link-icon {
+  font-size: 20px;
+  width: 32px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+.form-group label {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--white-dim);
+  margin-bottom: 8px;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--black-card);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  color: var(--white);
+  font-size: 15px;
+  font-family: var(--font-body);
+  transition: border-color 0.3s;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+.form-group textarea { min-height: 120px; resize: vertical; }
+
+/* ═══════ FOOTER ═══════ */
+footer {
+  text-align: center;
+  padding: 40px 24px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  color: var(--white-dim);
+  font-size: 13px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ═══════ ANIMATIONS ═══════ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══════ MEDIA KIT ═══════ */
+.media-kit-section {
+  background: linear-gradient(135deg, rgba(201,168,76,0.05), rgba(201,168,76,0.02));
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: var(--radius);
+  padding: 48px;
+  text-align: center;
+}
+
+.media-kit-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+/* ═══════ RESPONSIVE ═══════ */
+@media (max-width: 768px) {
+  .section { padding: 60px 16px; }
+  
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0; right: 0;
+    background: rgba(10,10,10,0.98);
+    flex-direction: column;
+    padding: 16px;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+  .nav-links.open { display: flex; }
+  
+  .mobile-menu-btn { display: block; }
+  
+  .hero-stats { gap: 20px; }
+  .hero-stat-value { font-size: 28px; }
+  
+  .contact-grid { grid-template-columns: 1fr; }
+  
+  .video-grid { grid-template-columns: 1fr; }
+  .youtube-grid { grid-template-columns: 1fr; }
+  
+  .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  
+  .countdown-digits { gap: 12px; }
+  .countdown-digit { min-width: 60px; }
+  
+  .lightbox-nav { display: none; }
+}
+
+@media (max-width: 480px) {
+  .btn { padding: 12px 24px; font-size: 14px; }
+  .hero-cta { flex-direction: column; align-items: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader"><div class="loader-ring"></div></div>
+
+<!-- PARTICLES -->
+<canvas id="particles"></canvas>
+
+<!-- NAVIGATION -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">VN</a>
+    <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Меню">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero" class="active">Главная</a></li>
+      <li><a href="#about">Обо мне</a></li>
+      <li><a href="#achievements">Достижения</a></li>
+      <li><a href="#stats">Статистика</a></li>
+      <li><a href="#gallery">Галерея</a></li>
+      <li><a href="#videos">Видео</a></li>
+      <li><a href="#press">Пресса</a></li>
+      <li><a href="#sponsor">Спонсору</a></li>
+      <li><a href="#contact">Контакты</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero" id="hero">
+  <img class="hero-bg" src="/media/vladimir_cover.jpg" alt="Владимир Нагорянский" onerror="this.style.display='none'">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🥋 Бразильское Джиу-Джитсу</div>
+    <h1>Владимир<br><span class="gold">Нагорянский</span></h1>
+    <p>#1 борец Северной Америки по версии AJP. Чемпион Катара, Испании, Латвии, Швейцарии. Синий пояс BJJ. Спортсмен и предприниматель.</p>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-value">#1</div>
+        <div class="hero-stat-label">Северная Америка AJP</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">#2</div>
+        <div class="hero-stat-label">Мировой рейтинг AJP</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">9+</div>
+        <div class="hero-stat-label">Золотых медалей</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">~1M</div>
+        <div class="hero-stat-label">Просмотров / 30д</div>
+      </div>
+    </div>
+
+    <div class="hero-cta">
+      <a href="#about" class="btn btn-gold">Узнать больше ↓</a>
+      <a href="#sponsor" class="btn btn-outline">Для спонсоров 🤝</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ COUNTDOWN ═══════════════ -->
+<section class="section" style="padding-top: 0;">
+  <div class="countdown-wrapper reveal">
+    <div class="countdown-title">⏳ До Чемпионата Мира</div>
+    <div class="countdown-digits" id="countdown">
+      <div class="countdown-digit"><span class="countdown-num" id="cd-days">00</span><span class="countdown-label">Дней</span></div>
+      <div class="countdown-digit"><span class="countdown-num" id="cd-hours">00</span><span class="countdown-label">Часов</span></div>
+      <div class="countdown-digit"><span class="countdown-num" id="cd-mins">00</span><span class="countdown-label">Минут</span></div>
+      <div class="countdown-digit"><span class="countdown-num" id="cd-secs">00</span><span class="countdown-label">Секунд</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ABOUT ═══════════════ -->
+<section class="section" id="about">
+  <div class="reveal">
+    <div class="section-label">Биография</div>
+    <h2 class="section-title">Путь воина</h2>
+    <p class="section-subtitle">От поражений к вершинам мирового рейтинга — история настоящего бойца.</p>
+  </div>
+
+  <div class="card-grid reveal">
+    <div class="card">
+      <div class="card-icon">🥊</div>
+      <h3>Начало пути</h3>
+      <p>7 лет бокса в раннем возрасте. В 15 лет впервые увидел бразильское джиу-джитсу на отдыхе в Турции — и это изменило всё. Вернувшись в Россию, начал тренировки по BJJ.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">💪</div>
+      <h3>Преодоление</h3>
+      <p>Первое время — сплошные поражения. В 2022 году на Чемпионате Мира ACBJJ проиграл все бои. Бывший тренер публично унизил. Но Владимир не сдался — продолжил тренировки с удвоенной силой.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏆</div>
+      <h3>Триумф</h3>
+      <p>Сегодня — #1 в Северной Америке, #2 в мировом рейтинге AJP. Золотые медали на турнирах в Катаре, Испании, Латвии, Швейцарии и России. Синий пояс BJJ с чемпионским рекордом.</p>
+    </div>
+  </div>
+
+  <!-- Timeline -->
+  <div class="timeline reveal" style="margin-top: 60px;">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2021</div>
+      <div class="timeline-title">Начало BJJ</div>
+      <div class="timeline-desc">Первые тренировки по бразильскому джиу-джитсу. Белый пояс. Освоение базы в партере.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2022</div>
+      <div class="timeline-title">Поражение на ЧМ ACBJJ</div>
+      <div class="timeline-desc">Чемпионат мира ACBJJ в Петербурге — поражения во всех боях. Потеря сознания от удушающего в бронзовом матче. Публичное унижение от бывшего тренера.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2023</div>
+      <div class="timeline-title">Первые победы</div>
+      <div class="timeline-desc">Синий пояс. Первые медали на турнирах AJP Tour. Стабильный рост в рейтинге.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2024–2025</div>
+      <div class="timeline-title">Золотая серия</div>
+      <div class="timeline-desc">Золото: Катар, Испания, Латвия, Швейцария. Серебро: Турция, Босния, Австрия. Бронза: Москва Grand Slam.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2026</div>
+      <div class="timeline-title">#1 Северная Америка</div>
+      <div class="timeline-desc">Вершина рейтинга AJP. #1 в Северной Америке, #2 в мире. Подготовка к Чемпионату Мира (май 2026).</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ACHIEVEMENTS ═══════════════ -->
+<section class="section" id="achievements" style="background: rgba(255,255,255,0.01);">
+  <div class="reveal">
+    <div class="section-label">Достижения BJJ</div>
+    <h2 class="section-title">Медали и титулы</h2>
+    <p class="section-subtitle">9 золотых, 4 серебряных, 2 бронзовых медали на турнирах AJP и ACBJJ по всему миру.</p>
+  </div>
+
+  <!-- World Rankings -->
+  <div class="stats-bar reveal" style="margin-bottom: 40px;">
+    <div class="stat-item">
+      <span class="stat-value">#1</span>
+      <span class="stat-label">Северная Америка AJP</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value">#2</span>
+      <span class="stat-label">Мировой рейтинг AJP</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value">15</span>
+      <span class="stat-label">Всего медалей</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value">9</span>
+      <span class="stat-label">Стран-побед</span>
+    </div>
+  </div>
+
+  <!-- GOLD MEDALS -->
+  <h3 style="color:var(--gold); margin-bottom:16px; font-size:18px;">🥇 Золото — AJP Tour</h3>
+  <div class="medal-grid reveal">
+    <div class="medal-card"><div class="medal-icon medal-gold-icon">🥇</div><div class="medal-info"><h4>AJP Russia National</h4><span>Россия</span></div><div class="medal-rank medal-gold-rank">GOLD</div></div>
+    <div class="medal-card"><div class="medal-icon medal-gold-icon">🥇</div><div class="medal-info"><h4>AJP Northwest Russia Regional</h4><span>Северо-Запад России</span></div><div class="medal-rank medal-gold-rank">GOLD</div></div>
+    <div class="medal-card"><div class="medal-icon medal-gold-icon">🥇</div><div class="medal-info"><h4>AJP Grand Slam Moscow</h4><span>Москва, Россия</span></div><div class="medal-rank medal-gold-rank">GOLD</div></div>
+    <div class="medal-card"><div class="medal-icon medal-gold-icon">🥇</div><div class="medal-info"><h4>AJP Qatar National</h4><span>Катар</span></div><div class="medal-rank medal-gold-rank">GOLD</div></div>
+    <div class="medal-card"><div class="medal-icon medal-gold-icon">🥇</div><div class="medal-info"><h4>AJP Switzerland National</h4><span>Швейцария</span></div><div class="medal-rank medal-gold-rank">GOLD</div></div>
+    <div class="medal-card"><div class="medal-icon medal-gold-icon">🥇</div><div class="medal-info"><h4>AJP Valencia International</h4><span>Испания</span></div><div class="medal-rank medal-gold-rank">GOLD</div></div>
+    <div class="medal-card"><div class="medal-icon medal-gold-icon">🥇</div><div class="medal-info"><h4>AJP Frankfurt International</h4><span>Германия</span></div><div class="medal-rank medal-gold-rank">GOLD</div></div>
+    <div class="medal-card"><div class="medal-icon medal-gold-icon">🥇</div><div class="medal-info"><h4>AJP Latvia National</h4><span>Латвия</span></div><div class="medal-rank medal-gold-rank">GOLD</div></div>
+    <div class="medal-card"><div class="medal-icon medal-gold-icon">🥇</div><div class="medal-info"><h4>AJP Moscow International</h4><span>Москва, Россия</span></div><div class="medal-rank medal-gold-rank">GOLD</div></div>
+  </div>
+
+  <!-- SILVER MEDALS -->
+  <h3 style="color:#C0C0C0; margin: 32px 0 16px; font-size:18px;">🥈 Серебро — AJP Tour</h3>
+  <div class="medal-grid reveal">
+    <div class="medal-card"><div class="medal-icon medal-silver-icon">🥈</div><div class="medal-info"><h4>AJP Milan International</h4><span>Италия</span></div><div class="medal-rank medal-silver-rank">SILVER</div></div>
+    <div class="medal-card"><div class="medal-icon medal-silver-icon">🥈</div><div class="medal-info"><h4>AJP Turkey National</h4><span>Турция</span></div><div class="medal-rank medal-silver-rank">SILVER</div></div>
+    <div class="medal-card"><div class="medal-icon medal-silver-icon">🥈</div><div class="medal-info"><h4>AJP Bosnia National</h4><span>Босния</span></div><div class="medal-rank medal-silver-rank">SILVER</div></div>
+    <div class="medal-card"><div class="medal-icon medal-silver-icon">🥈</div><div class="medal-info"><h4>AJP Austria National</h4><span>Австрия</span></div><div class="medal-rank medal-silver-rank">SILVER</div></div>
+  </div>
+
+  <!-- BRONZE + ACBJJ -->
+  <h3 style="color:#CD7F32; margin: 32px 0 16px; font-size:18px;">🥉 Бронза и другие титулы</h3>
+  <div class="medal-grid reveal">
+    <div class="medal-card"><div class="medal-icon medal-bronze-icon">🥉</div><div class="medal-info"><h4>AJP Bern International</h4><span>Швейцария</span></div><div class="medal-rank medal-bronze-rank">BRONZE</div></div>
+    <div class="medal-card"><div class="medal-icon medal-bronze-icon">🥉</div><div class="medal-info"><h4>AJP Grand Slam Moscow</h4><span>Москва, Россия</span></div><div class="medal-rank medal-bronze-rank">BRONZE</div></div>
+    <div class="medal-card"><div class="medal-icon medal-silver-icon">🥈</div><div class="medal-info"><h4>ACBJJ Northwest</h4><span>Россия</span></div><div class="medal-rank medal-silver-rank">SILVER</div></div>
+    <div class="medal-card"><div class="medal-icon medal-bronze-icon">🥉</div><div class="medal-info"><h4>ACBJJ Russia</h4><span>Россия</span></div><div class="medal-rank medal-bronze-rank">BRONZE</div></div>
+  </div>
+</section>
+
+<!-- ═══════════════ STATS ═══════════════ -->
+<section class="section" id="stats">
+  <div class="reveal">
+    <div class="section-label">Статистика</div>
+    <h2 class="section-title">Аудитория и охваты</h2>
+    <p class="section-subtitle">Медийные показатели в социальных сетях — данные за последние 30 дней.</p>
+  </div>
+
+  <div class="stats-bar reveal">
+    <div class="stat-item">
+      <span class="stat-value">983 793</span>
+      <span class="stat-label">Просмотров / 30д (Instagram*)</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value">496 055</span>
+      <span class="stat-label">Охват / 30д</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value">2 016</span>
+      <span class="stat-label">Подписчики Instagram*</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value">1.8M</span>
+      <span class="stat-label">Топ-рилс (просмотры)</span>
+    </div>
+  </div>
+
+  <div class="card-grid reveal">
+    <div class="card">
+      <div class="card-icon">📱</div>
+      <h3>Instagram*</h3>
+      <p>2 016 подписчиков. 983 793 просмотров за 30 дней. Охват: 496 055. Reels = 97.6% контента. Топ-рилс: 1.8 млн и 721 тыс. просмотров.</p>
+      <a href="https://www.instagram.com/the_baseball_bat_fighter" target="_blank" class="btn btn-outline" style="margin-top:16px;font-size:13px;">@the_baseball_bat_fighter →</a>
+    </div>
+    <div class="card">
+      <div class="card-icon">▶️</div>
+      <h3>YouTube</h3>
+      <p>44 подписчика. Топ-ролик: 5 900 просмотров. Канал используется как воронка для Instagram. Контент: BJJ, бизнес, криптовалюта.</p>
+      <a href="https://youtube.com/@the_baseball_bat" target="_blank" class="btn btn-outline" style="margin-top:16px;font-size:13px;">@the_baseball_bat →</a>
+    </div>
+    <div class="card">
+      <div class="card-icon">✈️</div>
+      <h3>Telegram</h3>
+      <p>24 подписчика. Закрытый канал для ближнего круга. Используется для коммуникации и анонсов.</p>
+      <a href="https://t.me/the_baseball_bat" target="_blank" class="btn btn-outline" style="margin-top:16px;font-size:13px;">@the_baseball_bat →</a>
+    </div>
+  </div>
+
+  <!-- Instagram Top Reels -->
+  <div class="card-grid reveal" style="margin-top:24px;">
+    <div class="card">
+      <div class="card-icon">🔥</div>
+      <h3>Топ-рилс #1</h3>
+      <p style="color:var(--gold); font-size:24px; font-weight:bold;">1 800 000</p>
+      <p>просмотров</p>
+      <a href="https://www.instagram.com/reel/DSDvlFqjF4e/" target="_blank" style="color:var(--gold); font-size:13px;">Смотреть →</a>
+    </div>
+    <div class="card">
+      <div class="card-icon">📈</div>
+      <h3>Топ-рилс #2</h3>
+      <p style="color:var(--gold); font-size:24px; font-weight:bold;">721 000</p>
+      <p>просмотров</p>
+      <a href="https://www.instagram.com/reel/DXl8eLYMwTX/" target="_blank" style="color:var(--gold); font-size:13px;">Смотреть →</a>
+    </div>
+  </div>
+
+  <!-- Instagram Stats Screenshots -->
+  <div style="margin-top: 40px;" class="reveal">
+    <h3 style="color:var(--white); margin-bottom:16px; font-size:16px;">📊 Скриншоты статистики Instagram*</h3>
+    <div style="display:flex; gap:12px; overflow-x:auto; padding-bottom:12px;">
+      <img src="/media/photos/photo_01.jpg" style="height:300px; border-radius:8px;" alt="Статистика 1" onclick="openLightbox(this.src)" loading="lazy">
+      <img src="/media/photos/photo_02.jpg" style="height:300px; border-radius:8px;" alt="Статистика 2" onclick="openLightbox(this.src)" loading="lazy">
+      <img src="/media/photos/photo_03.jpg" style="height:300px; border-radius:8px;" alt="Статистика 3" onclick="openLightbox(this.src)" loading="lazy">
+      <img src="/media/photos/photo_04.jpg" style="height:300px; border-radius:8px;" alt="Статистика 4" onclick="openLightbox(this.src)" loading="lazy">
+      <img src="/media/photos/photo_05.jpg" style="height:300px; border-radius:8px;" alt="Статистика 5" onclick="openLightbox(this.src)" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PHOTO GALLERY ═══════════════ -->
+<section class="section" id="gallery" style="background: rgba(255,255,255,0.01);">
+  <div class="reveal">
+    <div class="section-label">Фотогалерея</div>
+    <h2 class="section-title">32 фото с турниров</h2>
+    <p class="section-subtitle">AJP Tour, тренировки, награждения — кликните для увеличения.</p>
+  </div>
+
+  <div class="gallery-grid reveal" id="galleryGrid">
+    <!-- Generated by JS -->
+  </div>
+</section>
+
+<!-- ═══════════════ LIGHTBOX ═══════════════ -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <div class="lightbox-close" onclick="closeLightbox()">✕</div>
+  <div class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1, event)">‹</div>
+  <div class="lightbox-nav lightbox-next" onclick="navigateLightbox(1, event)">›</div>
+  <img id="lightboxImg" src="" alt="" onclick="event.stopPropagation()">
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
+
+<!-- ═══════════════ VIDEOS ═══════════════ -->
+<section class="section" id="videos">
+  <div class="reveal">
+    <div class="section-label">Видео</div>
+    <h2 class="section-title">Бои и турниры</h2>
+    <p class="section-subtitle">Эксклюзивные кадры с турниров AJP Tour по всему миру.</p>
+  </div>
+
+  <!-- Own Videos -->
+  <div class="video-grid reveal">
+    <div class="video-card">
+      <video controls preload="metadata" poster="/media/vladimir_cover.jpg">
+        <source src="/media/videos/fight_1610.mp4" type="video/mp4">
+      </video>
+      <div class="video-info">
+        <h4>⚡ Победа в полуфинале</h4>
+        <span>AJP Tour — Yigit Coskun · Gi/Blue/69kg</span>
+      </div>
+    </div>
+    <div class="video-card">
+      <video controls preload="metadata">
+        <source src="/media/videos/fight_1611.mp4" type="video/mp4">
+      </video>
+      <div class="video-info">
+        <h4>🌍 Панорама турнира</h4>
+        <span>AJP Tour Istanbul</span>
+      </div>
+    </div>
+    <div class="video-card">
+      <video controls preload="metadata">
+        <source src="/media/videos/fight_1612.mp4" type="video/mp4">
+      </video>
+      <div class="video-info">
+        <h4>🥋 Бой с Kasumov</h4>
+        <span>AJP Grand Slam Moscow 2025</span>
+      </div>
+    </div>
+    <div class="video-card">
+      <video controls preload="metadata">
+        <source src="/media/videos/fight_1613.mp4" type="video/mp4">
+      </video>
+      <div class="video-info">
+        <h4>🏟️ Турнир «Отечество»</h4>
+        <span>Санкт-Петербург</span>
+      </div>
+    </div>
+    <div class="video-card">
+      <video controls preload="metadata">
+        <source src="/media/videos/fight_7429.mp4" type="video/mp4">
+      </video>
+      <div class="video-info">
+        <h4>💪 Январь 2026</h4>
+        <span>Тренировочный лагерь</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- YouTube Interviews -->
+  <div style="margin-top: 48px;" class="reveal">
+    <h3 style="color:var(--gold); margin-bottom:24px; font-size:20px;">🎙️ Интервью на YouTube</h3>
+    <div class="youtube-grid">
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <div class="youtube-card">
+          <iframe src="https://www.youtube.com/embed/cyL2goOrrME" allowfullscreen loading="lazy" title="Хочешь БЫСТРЫХ ДЕНЕГ? Ты ПРОИГРАЕШЬ!"></iframe>
+        </div>
+        <span style="font-size:13px; color:var(--white-dim);">«Хочешь БЫСТРЫХ ДЕНЕГ? Ты ПРОИГРАЕШЬ!» · 30.01.2026</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <div class="youtube-card">
+          <iframe src="https://www.youtube.com/embed/RY7OWMeUHEA" allowfullscreen loading="lazy" title="Как из музыкальных битов построить криптобизнес"></iframe>
+        </div>
+        <span style="font-size:13px; color:var(--white-dim);">«Из битов в криптобизнес с оборотом от 7 млн»</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PRESS ═══════════════ -->
+<section class="section" id="press" style="background: rgba(255,255,255,0.01);">
+  <div class="reveal">
+    <div class="section-label">Пресса и публикации</div>
+    <h2 class="section-title">В СМИ и спортивных изданиях</h2>
+    <p class="section-subtitle">Статьи, интервью и профили на ведущих спортивных и бизнес-площадках.</p>
+  </div>
+
+  <div class="press-grid reveal">
+    <a href="https://www.bydfi.com/blog/bydfi/partnerships-ama/from-the-bjj-mat-to-the-markets-the-decisive-victory-of-world-1-baseball-bat-vladimir/" target="_blank" class="press-card">
+      <div class="press-source">BYDFi Blog</div>
+      <h4>From the BJJ Mat to the Markets: The Decisive Victory of World #1 'Baseball Bat' Vladimir</h4>
+      <p>Партнёрская статья о пути Владимира из BJJ в крипто-бизнес. Интервью с чемпионом мира #1.</p>
+      <span class="press-date">27 апреля 2026</span>
+    </a>
+
+    <a href="https://ajptour.com/en/profile/183810" target="_blank" class="press-card">
+      <div class="press-source">AJP Tour — Официальный профиль</div>
+      <h4>Vladimir Nagorianskii — Blue Belt</h4>
+      <p>Официальный профиль на сайте AJP Tour. 21 год, синий пояс. Все результаты турниров: Northwest Russia 2026, Grand Slam Rome 2025-2026.</p>
+      <span class="press-date">Актуальный рейтинг</span>
+    </a>
+
+    <div class="press-card">
+      <div class="press-source">ChatGPT · Анализ</div>
+      <h4>Анализ медийной стратегии</h4>
+      <p>Результаты анализа поисковой выдачи, рекомендации по SERM и план публикаций для формирования медийного присутствия.</p>
+      <div style="display:flex; gap:8px; margin-top:12px; flex-wrap:wrap;">
+        <img src="/media/chatgpt_1.png" style="height:80px; border-radius:4px; cursor:pointer;" onclick="openLightbox(this.src)" alt="ChatGPT анализ">
+        <img src="/media/chatgpt_2.png" style="height:80px; border-radius:4px; cursor:pointer;" onclick="openLightbox(this.src)" alt="ChatGPT анализ">
+        <img src="/media/chatgpt_3.png" style="height:80px; border-radius:4px; cursor:pointer;" onclick="openLightbox(this.src)" alt="ChatGPT анализ">
+      </div>
+    </div>
+
+    <div class="press-card" style="cursor:default;">
+      <div class="press-source">OpenCode · Сессия</div>
+      <h4>Планирование медиа-кампании</h4>
+      <p>Полная сессия планирования в OpenCode: стратегия, бюджет до 500 000 ₽, выбор площадок, копирайтинг.</p>
+      <img src="/media/opencode_screenshot.png" style="width:100%; border-radius:4px; margin-top:12px; cursor:pointer;" onclick="openLightbox(this.src)" alt="OpenCode">
+    </div>
+  </div>
+
+  <!-- PDF Downloads -->
+  <div class="card-grid reveal" style="margin-top: 24px;">
+    <div class="card">
+      <div class="card-icon">📄</div>
+      <h3>Анализ поисковой выдачи</h3>
+      <p>PDF-отчёт ChatGPT с анализом текущего присутствия в Яндексе и Google, рекомендациями по SERM.</p>
+      <a href="/media/chatgpt_analysis.pdf" download class="btn btn-outline" style="margin-top:12px;font-size:13px;">Скачать PDF</a>
+    </div>
+    <div class="card">
+      <div class="card-icon">📋</div>
+      <h3>Сессия OpenCode</h3>
+      <p>Полный скриншот сессии планирования медиа-кампании — стратегия, бюджет, площадки.</p>
+      <a href="/media/opencode_session.pdf" download class="btn btn-outline" style="margin-top:12px;font-size:13px;">Скачать PDF</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOR SPONSOR ═══════════════ -->
+<section class="section" id="sponsor">
+  <div class="reveal">
+    <div class="section-label">Спонсору</div>
+    <h2 class="section-title">Почему стоит поддержать</h2>
+    <p class="section-subtitle">Медийный спортсмен с растущей аудиторией и международным признанием.</p>
+  </div>
+
+  <div class="card-grid reveal">
+    <div class="card">
+      <div class="card-icon">🌍</div>
+      <h3>Международный охват</h3>
+      <p>Выступления на турнирах в 9+ странах: Россия, Катар, Испания, Латвия, Швейцария, Турция, Германия, Италия, Босния. Ваш бренд — на мировой арене.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📊</div>
+      <h3>Медийные показатели</h3>
+      <p>~1 млн просмотров в месяц в Instagram*. Аудитория 18-35 лет. Платёжеспособная аудитория: крипто-бизнес, единоборства, спорт.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏆</div>
+      <h3>Спортивный престиж</h3>
+      <p>#1 в Северной Америке, #2 в мире по версии AJP. 15 медалей на международных турнирах. Ассоциация с победителем мирового уровня.</p>
+    </div>
+  </div>
+
+  <div class="media-kit-section reveal" style="margin-top:32px;">
+    <div class="media-kit-icon">📦</div>
+    <h3 style="font-family:var(--font-display); font-size:24px; margin-bottom:8px;">Медиа-кит</h3>
+    <p style="color:var(--white-dim); margin-bottom:24px;">Полный набор материалов для спонсоров: презентация, статистика, фото, варианты интеграции.</p>
+    <a href="/media/chatgpt_analysis.pdf" download class="btn btn-gold">Скачать медиа-кит 📥</a>
+  </div>
+
+  <div class="card-grid reveal" style="margin-top:32px;">
+    <div class="card">
+      <h3>🎯 Варианты интеграции</h3>
+      <p style="color:var(--white-dim); font-size:14px; line-height:2;">
+        • Размещение логотипа на кимоно (грудь, спина, шорты)<br>
+        • Упоминания в Instagram*-рилсах<br>
+        • Интеграция в YouTube-контент<br>
+        • Совместные публикации в СМИ<br>
+        • Участие в мероприятиях спонсора<br>
+        • Эксклюзивное партнёрство на сезон
+      </p>
+    </div>
+    <div class="card">
+      <h3>📍 Ближайшие турниры</h3>
+      <p style="color:var(--white-dim); font-size:14px; line-height:2;">
+        • Май 2026 — Чемпионат Мира<br>
+        • AJP Grand Slam (следующие этапы)<br>
+        • Национальные турниры в России<br>
+        • Международные турниры AJP
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<section class="section" id="contact" style="background: rgba(255,255,255,0.01);">
+  <div class="reveal">
+    <div class="section-label">Контакты</div>
+    <h2 class="section-title">Связаться</h2>
+    <p class="section-subtitle">Для предложений о спонсорстве, сотрудничестве и интервью.</p>
+  </div>
+
+  <div class="contact-grid reveal">
+    <div class="contact-info">
+      <div class="contact-links">
+        <a href="https://www.instagram.com/the_baseball_bat_fighter" target="_blank" class="contact-link">
+          <span class="contact-link-icon">📱</span> Instagram* · @the_baseball_bat_fighter
+        </a>
+        <a href="https://youtube.com/@the_baseball_bat" target="_blank" class="contact-link">
+          <span class="contact-link-icon">▶️</span> YouTube · @the_baseball_bat
+        </a>
+        <a href="https://t.me/the_baseball_bat" target="_blank" class="contact-link">
+          <span class="contact-link-icon">✈️</span> Telegram · @the_baseball_bat
+        </a>
+        <a href="https://ajptour.com/en/profile/183810" target="_blank" class="contact-link">
+          <span class="contact-link-icon">🥋</span> AJP Tour · Профиль #183810
+        </a>
+        <a href="https://www.bydfi.com/blog/bydfi/partnerships-ama/from-the-bjj-mat-to-the-markets-the-decisive-victory-of-world-1-baseball-bat-vladimir/" target="_blank" class="contact-link">
+          <span class="contact-link-icon">📰</span> BYDFi · Статья
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label>Имя</label>
+          <input type="text" placeholder="Ваше имя" required>
+        </div>
+        <div class="form-group">
+          <label>Email или Telegram</label>
+          <input type="text" placeholder="Как с вами связаться" required>
+        </div>
+        <div class="form-group">
+          <label>Сообщение</label>
+          <textarea placeholder="Ваше предложение..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold">Отправить ✉️</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <p>© 2026 Владимир Нагорянский · #1 AJP Северная Америка · #2 Мир · the_baseball_bat</p>
+  <p style="margin-top:8px; font-size:11px;">* Продукт компании Meta, признанной экстремистской в РФ</p>
+</footer>
+
+<!-- ═══════════════ SCRIPTS ═══════════════ -->
+<script>
+// ═══════ LOADER ═══════
+window.addEventListener('load', () => {
+  setTimeout(() => document.getElementById('loader').classList.add('hidden'), 400);
+});
+
+// ═══════ PARTICLES ═══════
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let particles = [];
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+class Particle {
+  constructor() {
+    this.reset();
+    this.y = Math.random() * canvas.height;
+  }
+  reset() {
+    this.x = Math.random() * canvas.width;
+    this.y = -10;
+    this.size = Math.random() * 2 + 0.5;
+    this.speedY = Math.random() * 0.5 + 0.2;
+    this.speedX = (Math.random() - 0.5) * 0.3;
+    this.opacity = Math.random() * 0.5 + 0.1;
+  }
+  update() {
+    this.y += this.speedY;
+    this.x += this.speedX;
+    if (this.y > canvas.height + 10) this.reset();
+  }
+  draw() {
+    ctx.fillStyle = `rgba(201,168,76,${this.opacity})`;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fill();
+  }
+}
+
+for (let i = 0; i < 80; i++) particles.push(new Particle());
+
+function animateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => { p.update(); p.draw(); });
+  requestAnimationFrame(animateParticles);
+}
+animateParticles();
+
+// ═══════ NAVIGATION ═══════
+const navbar = document.getElementById('navbar');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+
+  // Active section tracking
+  const sections = document.querySelectorAll('section[id]');
+  let current = '';
+  sections.forEach(s => {
+    const top = s.offsetTop - 120;
+    if (window.scrollY >= top) current = s.getAttribute('id');
+  });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+// Close mobile menu on link click
+navLinks.forEach(a => {
+  a.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
+
+// ═══════ COUNTDOWN ═══════
+// May 29, 2026 — World Championship
+const targetDate = new Date('2026-05-29T00:00:00').getTime();
+
+function updateCountdown() {
+  const now = Date.now();
+  const diff = targetDate - now;
+
+  if (diff <= 0) {
+    ['days','hours','mins','secs'].forEach(id => document.getElementById('cd-'+id).textContent = '00');
+    return;
+  }
+
+  const days = Math.floor(diff / (1000*60*60*24));
+  const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+  const mins = Math.floor((diff % (1000*60*60)) / (1000*60));
+  const secs = Math.floor((diff % (1000*60)) / 1000);
+
+  document.getElementById('cd-days').textContent = String(days).padStart(2,'0');
+  document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
+  document.getElementById('cd-mins').textContent = String(mins).padStart(2,'0');
+  document.getElementById('cd-secs').textContent = String(secs).padStart(2,'0');
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ═══════ REVEAL ON SCROLL ═══════
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ═══════ PHOTO GALLERY ═══════
+const galleryGrid = document.getElementById('galleryGrid');
+const TOTAL_PHOTOS = 32;
+let galleryImages = [];
+
+for (let i = 1; i <= TOTAL_PHOTOS; i++) {
+  const num = String(i).padStart(2, '0');
+  const src = `/media/photos/photo_${num}.jpg`;
+  galleryImages.push(src);
+
+  const item = document.createElement('div');
+  item.className = 'gallery-item';
+  item.innerHTML = `
+    <img src="${src}" alt="Фото ${i}" loading="lazy" onerror="this.parentElement.style.display='none'">
+    <div class="gallery-overlay"><span>Фото ${i}</span></div>
+  `;
+  item.addEventListener('click', () => openLightboxByIndex(i - 1));
+  galleryGrid.appendChild(item);
+}
+
+// ═══════ LIGHTBOX ═══════
+let currentLightboxIndex = -1;
+
+function openLightboxByIndex(index) {
+  currentLightboxIndex = index;
+  const img = document.getElementById('lightboxImg');
+  img.src = galleryImages[index];
+  document.getElementById('lightbox').classList.add('active');
+  document.getElementById('lightboxCounter').textContent = `${index + 1} / ${galleryImages.length}`;
+  document.body.style.overflow = 'hidden';
+}
+
+function openLightbox(src) {
+  const index = galleryImages.indexOf(src);
+  if (index >= 0) openLightboxByIndex(index);
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+  currentLightboxIndex = -1;
+}
+
+function navigateLightbox(dir, e) {
+  e.stopPropagation();
+  if (galleryImages.length === 0) return;
+  currentLightboxIndex = (currentLightboxIndex + dir + galleryImages.length) % galleryImages.length;
+  document.getElementById('lightboxImg').src = galleryImages[currentLightboxIndex];
+  document.getElementById('lightboxCounter').textContent = `${currentLightboxIndex + 1} / ${galleryImages.length}`;
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+  if (!document.getElementById('lightbox').classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') navigateLightbox(-1, e);
+  if (e.key === 'ArrowRight') navigateLightbox(1, e);
+});
+
+// ═══════ CONTACT FORM ═══════
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button');
+  const orig = btn.textContent;
+  btn.textContent = '✓ Отправлено!';
+  btn.style.background = '#2d6a4f';
+  setTimeout(() => {
+    btn.textContent = orig;
+    btn.style.background = '';
+    e.target.reset();
+  }, 2500);
+}
+
+// ═══════ SMOOTH SCROLL ═══════
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>

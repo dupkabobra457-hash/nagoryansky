@@ -1,0 +1,2422 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Владимир «Baseball Bat» Нагорянский — #1 Северная Америка AJP, #2 в мире. Профессиональный BJJ-спортсмен. Спонсорство.">
+    <meta name="keywords" content="BJJ, бразильское джиу-джитсу, Владимир Нагорянский, спонсорство, AJP, Baseball Bat, грэпплинг, чемпион">
+    <meta name="author" content="Vladimir Nagoryansky">
+    <meta property="og:title" content="Baseball Bat — BJJ Fighter">
+    <meta property="og:description" content="#1 Северная Америка · #2 Мир · 10+ золотых медалей AJP">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/media/photos/vladimir_cover.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Baseball Bat | BJJ Fighter · #1 North America</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0000;
+            --bg-alt: #0d0000;
+            --bg-card: #120202;
+            --bg-card-hover: #1a0404;
+            --red: #e63946;
+            --red-glow: #ff3333;
+            --red-dim: #b3202d;
+            --red-bg: rgba(230, 57, 70, 0.08);
+            --red-border: rgba(230, 57, 70, 0.2);
+            --text: #ffffff;
+            --text-muted: #b0a0a5;
+            --text-dim: #705a60;
+            --border: #1a0808;
+            --radius: 2px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* Blood drip selection */
+        ::selection { background: var(--red); color: #fff; }
+
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: var(--red-dim); }
+        ::-webkit-scrollbar-thumb:hover { background: var(--red); }
+
+        /* ============ BRUTAL TYPOGRAPHY ============ */
+        .bebas { font-family: 'Bebas Neue', sans-serif; }
+        .oswald { font-family: 'Oswald', sans-serif; }
+        .rajdhani { font-family: 'Rajdhani', sans-serif; }
+
+        .container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+
+        .section { padding: 100px 0; position: relative; }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 16px;
+            letter-spacing: 0.12em;
+            color: var(--red-glow);
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .section-badge::before {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background: var(--red-glow);
+            display: inline-block;
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(42px, 7vw, 80px);
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .section-title .accent { color: var(--red-glow); }
+
+        /* ============ NOISE OVERLAY ============ */
+        .noise {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+        }
+        .noise::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: repeating-conic-gradient(#000 0.00001%, #fff 0.0001%, #000 0.00015%);
+            animation: noiseShift 8s steps(3) infinite;
+        }
+        @keyframes noiseShift {
+            0%, 100% { transform: translate(0, 0); }
+            33% { transform: translate(-2px, 1px); }
+            66% { transform: translate(1px, -2px); }
+        }
+
+        /* ============ TOP BAR ============ */
+        .topbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--red-border);
+            transition: var(--transition);
+        }
+        .topbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 14px 20px;
+        }
+        .topbar-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 26px;
+            letter-spacing: 0.05em;
+            color: var(--text);
+            text-decoration: none;
+        }
+        .topbar-logo span { color: var(--red-glow); }
+        .topbar-links { display: flex; gap: 28px; list-style: none; }
+        .topbar-links a {
+            font-family: 'Oswald', sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color var(--transition);
+            position: relative;
+        }
+        .topbar-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 2px;
+            background: var(--red-glow);
+            transition: width var(--transition);
+        }
+        .topbar-links a:hover { color: var(--red-glow); }
+        .topbar-links a:hover::after { width: 100%; }
+        .topbar-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            z-index: 1001;
+        }
+        .topbar-toggle span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: var(--text);
+            margin: 5px 0;
+            transition: var(--transition);
+        }
+
+        /* ============ HERO ============ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 100px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+        .hero-bg-cover {
+            position: absolute;
+            inset: 0;
+            background: url('/media/photos/vladimir_cover.jpg') center/cover no-repeat;
+            opacity: 0.08;
+            filter: grayscale(100%) brightness(0.3);
+        }
+        .hero-bg-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.15;
+            background: var(--red-glow);
+            right: -10%;
+            top: 10%;
+            animation: glowPulse 4s ease-in-out infinite;
+        }
+        @keyframes glowPulse {
+            0%, 100% { transform: scale(1); opacity: 0.12; }
+            50% { transform: scale(1.15); opacity: 0.2; }
+        }
+        .hero-bg-lines {
+            position: absolute;
+            inset: 0;
+            background: 
+                linear-gradient(180deg, transparent 0%, var(--red-bg) 50%, transparent 100%),
+                repeating-linear-gradient(0deg, transparent, transparent 3px, var(--red-border) 3px, var(--red-border) 4px);
+            mask-image: linear-gradient(180deg, transparent 20%, black 50%, transparent 80%);
+            -webkit-mask-image: linear-gradient(180deg, transparent 20%, black 50%, transparent 80%);
+        }
+        .hero .container { position: relative; z-index: 1; }
+
+        .hero-pre {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--red-glow);
+            margin-bottom: 12px;
+            animation: slideUp 0.6s ease;
+        }
+        .hero-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(56px, 11vw, 132px);
+            font-weight: 400;
+            line-height: 0.9;
+            letter-spacing: 0.01em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            animation: slideUp 0.6s ease 0.1s both;
+        }
+        .hero-name .em { color: var(--red-glow); }
+        .hero-tagline {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(18px, 2.5vw, 28px);
+            font-weight: 300;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 40px;
+            animation: slideUp 0.6s ease 0.2s both;
+        }
+        .hero-metrics {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 44px;
+            flex-wrap: wrap;
+            animation: slideUp 0.6s ease 0.3s both;
+        }
+        .metric {
+            text-align: center;
+            padding: 20px 28px;
+            background: var(--bg-card);
+            border: 1px solid var(--red-border);
+            position: relative;
+            overflow: hidden;
+        }
+        .metric::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 3px;
+            background: var(--red-glow);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+        .metric:hover::before { transform: scaleX(1); }
+        .metric-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(40px, 6vw, 72px);
+            font-weight: 400;
+            line-height: 1;
+            color: var(--red-glow);
+            letter-spacing: 0.02em;
+        }
+        .metric-label {
+            font-family: 'Oswald', sans-serif;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .btn {
+            display: inline-block;
+            font-family: 'Oswald', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all var(--transition);
+            padding: 16px 38px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .btn-fight {
+            background: var(--red-glow);
+            color: #fff;
+            clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+        }
+        .btn-fight:hover {
+            background: #ff4d4d;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(255, 51, 51, 0.3);
+        }
+        .btn-ghost {
+            background: transparent;
+            color: var(--red-glow);
+            border: 2px solid var(--red-glow);
+            clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+        }
+        .btn-ghost:hover {
+            background: var(--red-glow);
+            color: #fff;
+            box-shadow: 0 8px 30px rgba(255, 51, 51, 0.2);
+        }
+        .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; animation: slideUp 0.6s ease 0.4s both; }
+
+        /* SCROLL INDICATOR */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            animation: bounceDown 2s ease-in-out infinite;
+            z-index: 1;
+        }
+        .scroll-indicator span {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+        .scroll-line {
+            width: 1px;
+            height: 30px;
+            background: linear-gradient(var(--red-glow), transparent);
+        }
+        @keyframes bounceDown {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
+        }
+
+        /* ============ ABOUT ============ */
+        .about-section { background: var(--bg-alt); }
+        .about-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+        .about-visual {
+            aspect-ratio: 1;
+            background: var(--bg-card);
+            border: 2px solid var(--red-border);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .about-visual-inner {
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse at 30% 40%, rgba(230, 57, 70, 0.2) 0%, transparent 60%),
+                linear-gradient(160deg, #1a0404 0%, #0d0000 50%, #120202 100%);
+            position: relative;
+        }
+        .about-visual-inner::before {
+            content: '🥋';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 80px;
+            opacity: 0.3;
+            animation: floatIcon 3s ease-in-out infinite;
+        }
+        @keyframes floatIcon {
+            0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+            50% { transform: translate(-50%, -50%) translateY(-10px); }
+        }
+        .about-visual-label {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            padding: 16px;
+            text-align: center;
+            background: linear-gradient(transparent, var(--bg-card) 70%);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 20px;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+        }
+
+        .about-copy { font-size: 15px; color: var(--text-muted); line-height: 1.8; }
+        .about-copy strong { color: var(--text); font-weight: 700; }
+        .about-callout {
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--red-glow);
+            padding: 20px 20px 20px 24px;
+            border-left: 4px solid var(--red-glow);
+            background: var(--red-bg);
+            margin: 24px 0;
+            line-height: 1.5;
+        }
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 24px;
+        }
+        .stat-chip {
+            padding: 14px 16px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--red-dim);
+            transition: var(--transition);
+        }
+        .stat-chip:hover { border-left-color: var(--red-glow); background: var(--bg-card-hover); }
+        .stat-chip-key {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--red-dim);
+            margin-bottom: 4px;
+        }
+        .stat-chip-val {
+            font-family: 'Oswald', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        /* ============ ACHIEVEMENTS ============ */
+        .achievements {}
+        .rank-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        .rank-block {
+            padding: 36px 32px;
+            background: var(--bg-card);
+            border: 1px solid var(--red-border);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .rank-block:hover { border-color: var(--red-glow); }
+        .rank-block::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 100%; height: 3px;
+            background: var(--red-glow);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s ease;
+        }
+        .rank-block:hover::after { transform: scaleX(1); transform-origin: left; }
+        .rank-num {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 90px;
+            font-weight: 400;
+            color: var(--red-glow);
+            line-height: 1;
+            letter-spacing: 0.02em;
+        }
+        .rank-sub {
+            font-family: 'Oswald', sans-serif;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .medal-section { margin-bottom: 32px; }
+        .medal-header {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 28px;
+            letter-spacing: 0.04em;
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--red-border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .medal-gold .medal-header { color: #ffd700; }
+        .medal-silver .medal-header { color: #c0c0c0; }
+        .medal-bronze .medal-header { color: #cd7f32; }
+        .medal-items {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            list-style: none;
+        }
+        .medal-items li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 500;
+            position: relative;
+            padding-left: 14px;
+        }
+        .medal-items li::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 50%;
+            transform: translateY(-50%);
+            width: 5px; height: 5px;
+            background: var(--red-dim);
+        }
+
+        /* ============ STORY ============ */
+        .story-section { background: var(--bg-alt); }
+        .story-body {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 16px;
+            line-height: 1.9;
+            color: var(--text-muted);
+        }
+        .story-body p { margin-bottom: 20px; }
+        .story-body strong { color: var(--text); font-weight: 700; }
+        .story-flag {
+            text-align: center;
+            margin: 36px 0;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--red-glow);
+            padding: 14px 24px;
+            border: 1px solid var(--red-border);
+            display: inline-block;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* ============ MEDIA ============ */
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        .media-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 36px 20px;
+            background: var(--bg-card);
+            border: 2px solid var(--red-border);
+            text-decoration: none;
+            transition: all var(--transition);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .media-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--red-bg);
+            opacity: 0;
+            transition: opacity var(--transition);
+        }
+        .media-card:hover::before { opacity: 1; }
+        .media-card:hover {
+            border-color: var(--red-glow);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(230, 57, 70, 0.1);
+        }
+        .media-card > * { position: relative; z-index: 1; }
+        .media-emoji { font-size: 36px; margin-bottom: 12px; }
+        .media-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 24px;
+            letter-spacing: 0.04em;
+            color: var(--text);
+        }
+        .media-stat {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--red-glow);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-top: 6px;
+        }
+        .media-handle {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 12px;
+            color: var(--text-dim);
+            margin-top: 8px;
+            letter-spacing: 0.04em;
+        }
+
+        /* ============ SPONSORS ============ */
+        .sponsors-section { background: var(--bg-alt); }
+        .sponsors-wrap {
+            max-width: 740px;
+            margin: 0 auto;
+        }
+        .sponsors-lead {
+            font-size: 16px;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 36px;
+        }
+        .perks-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 40px;
+        }
+        .perk {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--red-border);
+            transition: var(--transition);
+        }
+        .perk:hover { border-color: var(--red-glow); background: var(--bg-card-hover); }
+        .perk-icon {
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+        .perk-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 4px;
+        }
+        .perk-desc { font-size: 13px; color: var(--text-dim); }
+        .sponsors-cta-wrap { text-align: center; }
+
+        /* ============ CONTACTS ============ */
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .contact-list { list-style: none; }
+        .contact-list li {
+            padding: 18px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 15px;
+            transition: var(--transition);
+        }
+        .contact-list li:hover { border-bottom-color: var(--red-dim); }
+        .contact-emoji { font-size: 22px; flex-shrink: 0; }
+        .contact-type {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-dim);
+        }
+        .contact-list a {
+            color: var(--red-glow);
+            text-decoration: none;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            transition: color var(--transition);
+        }
+        .contact-list a:hover { color: #ff6b6b; }
+        .contact-punch {
+            background: var(--bg-card);
+            border: 2px solid var(--red-glow);
+            padding: 40px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            animation: borderPulse 3s ease-in-out infinite;
+        }
+        @keyframes borderPulse {
+            0%, 100% { border-color: var(--red-glow); }
+            50% { border-color: var(--red-dim); }
+        }
+        .contact-punch-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 36px;
+            letter-spacing: 0.04em;
+            color: var(--red-glow);
+            margin-bottom: 10px;
+        }
+        .contact-punch-text { color: var(--text-muted); font-size: 14px; margin-bottom: 24px; }
+
+        /* ============ FOOTER ============ */
+        .footer {
+            padding: 36px 0;
+            border-top: 2px solid var(--red-border);
+            text-align: center;
+        }
+        .footer-text {
+            font-family: 'Oswald', sans-serif;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+        .footer-date {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 20px;
+            color: var(--red-glow);
+            letter-spacing: 0.08em;
+            margin-top: 6px;
+            animation: textFlicker 4s ease-in-out infinite;
+        }
+        @keyframes textFlicker {
+            0%, 100% { opacity: 1; }
+            92% { opacity: 1; }
+            93% { opacity: 0.4; }
+            94% { opacity: 1; }
+            95% { opacity: 0.5; }
+            96% { opacity: 1; }
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 768px) {
+            .section { padding: 60px 0; }
+            .hero { min-height: auto; padding: 80px 0 50px; }
+
+            .about-layout,
+            .rank-row,
+            .contact-layout,
+            .perks-grid { grid-template-columns: 1fr; }
+            .media-grid { grid-template-columns: 1fr; }
+            .medal-items { grid-template-columns: 1fr; }
+            .about-visual { aspect-ratio: 3/4; max-width: 240px; margin: 0 auto 30px; }
+            .hero-metrics { gap: 14px; }
+            .metric { padding: 14px 18px; }
+            .metric-number { font-size: 42px; }
+
+            .topbar-links {
+                position: fixed;
+                top: 0; right: -100%;
+                width: 280px; height: 100vh;
+                background: rgba(10, 0, 0, 0.97);
+                flex-direction: column;
+                justify-content: center;
+                padding: 60px 32px;
+                transition: right var(--transition);
+                backdrop-filter: blur(15px);
+                gap: 20px;
+                border-left: 2px solid var(--red-border);
+                z-index: 1000;
+            }
+            .topbar-links.active { right: 0; }
+            .topbar-links a { font-size: 18px; }
+            .topbar-toggle { display: block; }
+            .rank-num { font-size: 62px; }
+            .scroll-indicator { display: none; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-name { font-size: 44px; }
+            .section-title { font-size: 34px; }
+            .hero-tagline { font-size: 14px; }
+            .btn { padding: 14px 24px; font-size: 13px; }
+            .rank-num { font-size: 48px; }
+            .about-callout { font-size: 16px; }
+        }
+
+        /* ============ COUNTDOWN BANNER ============ */
+        .countdown-section {
+            background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 50%, var(--bg) 100%);
+            padding: 50px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .countdown-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, var(--red-bg) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .countdown-banner {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 48px 40px;
+            border: 2px solid var(--red-border);
+            background: var(--bg-card);
+            clip-path: polygon(20px 0, 100% 0, calc(100% - 20px) 100%, 0 100%);
+            animation: borderPulse 3s ease-in-out infinite;
+        }
+        .countdown-label {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+        .countdown-numbers {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .countdown-digit {
+            text-align: center;
+            min-width: 80px;
+        }
+        .countdown-digit-val {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(48px, 8vw, 90px);
+            font-weight: 400;
+            line-height: 1;
+            color: var(--red-glow);
+            animation: textFlicker 4s ease-in-out infinite;
+        }
+        .countdown-digit-lbl {
+            font-family: 'Oswald', sans-serif;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-dim);
+            margin-top: 4px;
+        }
+        .countdown-divider {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(40px, 7vw, 80px);
+            color: var(--red-dim);
+            line-height: 1;
+            align-self: center;
+        }
+        .countdown-tagline {
+            font-family: 'Oswald', sans-serif;
+            font-size: 18px;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-top: 20px;
+        }
+
+        /* ============ TIMELINE ============ */
+        .timeline-section { background: var(--bg-alt); }
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg,
+                transparent 0%,
+                var(--red-border) 5%,
+                var(--red-dim) 50%,
+                var(--red-glow) 95%,
+                transparent 100%);
+            transform: translateX(-50%);
+        }
+        .timeline-item {
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 48px;
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .timeline-item:nth-child(odd) { flex-direction: row; }
+        .timeline-item:nth-child(even) { flex-direction: row-reverse; }
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 3px solid var(--red-dim);
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            transition: all var(--transition);
+        }
+        .timeline-item:hover .timeline-dot {
+            border-color: var(--red-glow);
+            box-shadow: 0 0 20px rgba(255, 51, 51, 0.5);
+            background: var(--red-glow);
+        }
+        .timeline-dot.defeat {
+            border-color: #ff4444;
+            background: #1a0000;
+            animation: dotPulseDefeat 2s ease-in-out infinite;
+        }
+        @keyframes dotPulseDefeat {
+            0%, 100% { box-shadow: 0 0 8px rgba(255, 68, 68, 0.3); }
+            50% { box-shadow: 0 0 24px rgba(255, 68, 68, 0.7); }
+        }
+        .timeline-dot.present {
+            border-color: var(--red-glow);
+            background: var(--red-glow);
+            animation: dotPulse 2s ease-in-out infinite;
+        }
+        @keyframes dotPulse {
+            0%, 100% { box-shadow: 0 0 8px rgba(255, 51, 51, 0.3); }
+            50% { box-shadow: 0 0 24px rgba(255, 51, 51, 0.8); }
+        }
+        .timeline-dot.goal {
+            border-color: #ffd700;
+            background: #1a1500;
+            animation: dotPulseGold 2s ease-in-out infinite;
+        }
+        @keyframes dotPulseGold {
+            0%, 100% { box-shadow: 0 0 8px rgba(255, 215, 0, 0.3); }
+            50% { box-shadow: 0 0 28px rgba(255, 215, 0, 0.8); }
+        }
+
+        .timeline-card {
+            width: 42%;
+            padding: 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--red-border);
+            position: relative;
+            transition: all var(--transition);
+            clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+        }
+        .timeline-card:hover {
+            border-color: var(--red-glow);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(230, 57, 70, 0.12);
+        }
+        .timeline-card.defeat-card { border-color: rgba(255, 68, 68, 0.3); background: #0f0000; }
+        .timeline-card.goal-card { border-color: rgba(255, 215, 0, 0.4); background: #0f0a00; }
+        .timeline-year {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 38px;
+            line-height: 1;
+            color: var(--red-glow);
+            letter-spacing: 0.04em;
+            margin-bottom: 8px;
+        }
+        .timeline-card.defeat-card .timeline-year { color: #ff4444; }
+        .timeline-card.goal-card .timeline-year { color: #ffd700; }
+        .timeline-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+        .timeline-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .timeline-arrow {
+            position: absolute;
+            top: 22px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+        }
+        .timeline-item:nth-child(odd) .timeline-arrow {
+            right: -8px;
+            border-left: 8px solid var(--red-border);
+        }
+        .timeline-item:nth-child(even) .timeline-arrow {
+            left: -8px;
+            border-right: 8px solid var(--red-border);
+        }
+
+        /* ============ GALLERY ============ */
+        .gallery-section {}
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+        .gallery-item {
+            aspect-ratio: 4/3;
+            background: var(--bg-card);
+            border: 2px solid var(--red-border);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition);
+        }
+        .gallery-item:hover {
+            border-color: var(--red-glow);
+            transform: scale(1.03);
+            box-shadow: 0 8px 30px rgba(230, 57, 70, 0.2);
+            z-index: 2;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img { transform: scale(1.08); }
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(10, 0, 0, 0.85) 100%);
+            opacity: 0;
+            transition: opacity var(--transition);
+            display: flex;
+            align-items: flex-end;
+            padding: 16px;
+        }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        .gallery-overlay-text {
+            font-family: 'Oswald', sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #fff;
+        }
+
+        /* LIGHTBOX */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 0, 0, 0.95);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            backdrop-filter: blur(8px);
+        }
+        .lightbox.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .lightbox-img {
+            max-width: 90vw;
+            max-height: 85vh;
+            object-fit: contain;
+            border: 2px solid var(--red-border);
+            box-shadow: 0 0 60px rgba(230, 57, 70, 0.2);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        .lightbox.active .lightbox-img { transform: scale(1); }
+        .lightbox-close {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 36px;
+            color: var(--text-muted);
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: color var(--transition);
+            z-index: 1;
+        }
+        .lightbox-close:hover { color: var(--red-glow); }
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 48px;
+            color: var(--text-muted);
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: color var(--transition);
+            padding: 20px;
+        }
+        .lightbox-nav:hover { color: var(--red-glow); }
+        .lightbox-prev { left: 16px; }
+        .lightbox-next { right: 16px; }
+        .lightbox-counter {
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            color: var(--text-dim);
+        }
+
+        /* ============ VIDEOS ============ */
+        .videos-section { background: var(--bg-alt); }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        .video-card {
+            background: var(--bg-card);
+            border: 2px solid var(--red-border);
+            overflow: hidden;
+            transition: all var(--transition);
+        }
+        .video-card:hover {
+            border-color: var(--red-glow);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(230, 57, 70, 0.12);
+        }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .video-info {
+            padding: 20px;
+        }
+        .video-info-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+        .video-info-sub {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--red-glow);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* ============ INSTAGRAM STATS ROW ============ */
+        .ig-stats-row {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+        .ig-stat-card {
+            background: var(--bg-card);
+            border: 2px solid var(--red-border);
+            overflow: hidden;
+            cursor: pointer;
+            transition: all var(--transition);
+            position: relative;
+        }
+        .ig-stat-card:hover {
+            border-color: var(--red-glow);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(230, 57, 70, 0.18);
+        }
+        .ig-stat-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .ig-stat-card:hover img { transform: scale(1.05); }
+        .ig-stat-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            background: var(--red-glow);
+            color: #fff;
+            padding: 4px 10px;
+            z-index: 2;
+            clip-path: polygon(4px 0, 100% 0, calc(100% - 4px) 100%, 0 100%);
+        }
+
+        /* ============ FIGHT VIDEOS (NATIVE) ============ */
+        .fight-videos-section { background: var(--bg); }
+        .fight-video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        .fight-video-card {
+            background: var(--bg-card);
+            border: 2px solid var(--red-border);
+            overflow: hidden;
+            transition: all var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+        .fight-video-card:hover {
+            border-color: var(--red-glow);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(230, 57, 70, 0.12);
+        }
+        .fight-video-wrap {
+            position: relative;
+            background: #000;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+        }
+        .fight-video-wrap video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .fight-video-info {
+            padding: 16px;
+        }
+        .fight-video-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+        .fight-video-sub {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--red-glow);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* ============ SCREENSHOT CARDS ============ */
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 30px;
+        }
+        .screenshot-card {
+            background: var(--bg-card);
+            border: 2px solid var(--red-border);
+            cursor: pointer;
+            overflow: hidden;
+            transition: all var(--transition);
+            position: relative;
+            display: block;
+            text-decoration: none;
+        }
+        .screenshot-card:hover {
+            border-color: var(--red-glow);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(230, 57, 70, 0.15);
+        }
+        .screenshot-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .screenshot-card:hover img { transform: scale(1.05); }
+        .screenshot-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 12px;
+            background: linear-gradient(transparent, rgba(10, 0, 0, 0.9) 80%);
+            font-family: 'Oswald', sans-serif;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #fff;
+            opacity: 0;
+            transition: opacity var(--transition);
+        }
+        .screenshot-card:hover .screenshot-label { opacity: 1; }
+
+        /* ============ PDF CARDS ============ */
+        .pdf-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 30px;
+        }
+        .pdf-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 28px 24px;
+            background: var(--bg-card);
+            border: 2px solid var(--red-border);
+            text-decoration: none;
+            transition: all var(--transition);
+            clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+        }
+        .pdf-card:hover {
+            border-color: var(--red-glow);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(230, 57, 70, 0.15);
+            background: var(--bg-card-hover);
+        }
+        .pdf-icon {
+            font-size: 42px;
+            flex-shrink: 0;
+        }
+        .pdf-info-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+        .pdf-info-sub {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--red-glow);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* ============ ARTICLES ============ */
+        .articles-section {}
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .article-card {
+            display: flex;
+            flex-direction: column;
+            padding: 32px;
+            background: var(--bg-card);
+            border: 2px solid var(--red-border);
+            text-decoration: none;
+            transition: all var(--transition);
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+        }
+        .article-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 3px;
+            background: var(--red-glow);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+        .article-card:hover::before { transform: scaleX(1); }
+        .article-card:hover {
+            border-color: var(--red-glow);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(230, 57, 70, 0.15);
+        }
+        .article-source {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--red-glow);
+            margin-bottom: 10px;
+        }
+        .article-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1.3;
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-bottom: 8px;
+            flex-grow: 1;
+        }
+        .article-excerpt {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+        .article-read {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--red-dim);
+            transition: color var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .article-card:hover .article-read { color: var(--red-glow); }
+        .article-read::after {
+            content: '→';
+            transition: transform var(--transition);
+        }
+        .article-card:hover .article-read::after { transform: translateX(4px); }
+
+        /* ============ NAV INDICATOR ============ */
+        .nav-dots {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 500;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--text-dim);
+            transition: all var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+        .nav-dot:hover,
+        .nav-dot.active {
+            background: var(--red-glow);
+            box-shadow: 0 0 12px rgba(255, 51, 51, 0.5);
+            transform: scale(1.4);
+        }
+        .nav-dot-tooltip {
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--transition);
+        }
+        .nav-dot:hover .nav-dot-tooltip { opacity: 1; }
+
+        /* ============ RESPONSIVE ADDITIONS ============ */
+        @media (max-width: 768px) {
+            .timeline::before { left: 20px; }
+            .timeline-item,
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) { flex-direction: row; }
+            .timeline-dot { left: 20px; }
+            .timeline-card { width: calc(100% - 50px); margin-left: 50px; }
+            .timeline-arrow { display: none; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .video-grid { grid-template-columns: 1fr; }
+            .articles-grid { grid-template-columns: 1fr; }
+            .countdown-numbers { gap: 12px; }
+            .countdown-digit { min-width: 60px; }
+            .nav-dots { display: none; }
+            .ig-stats-row { grid-template-columns: repeat(3, 1fr); }
+            .fight-video-grid { grid-template-columns: 1fr; }
+            .screenshot-grid { grid-template-columns: repeat(2, 1fr); }
+            .pdf-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 480px) {
+            .gallery-grid { grid-template-columns: 1fr; }
+            .lightbox-nav { font-size: 32px; padding: 10px; }
+            .ig-stats-row { grid-template-columns: repeat(2, 1fr); }
+            .screenshot-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="noise"></div>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Владимир Нагорянский",
+        "alternateName": "Baseball Bat",
+        "description": "Профессиональный BJJ-спортсмен, #1 в Северной Америке, #2 в мировом рейтинге AJP. Синий пояс, до 69 кг.",
+        "url": "https://nagoryansky.com",
+        "sameAs": [
+            "https://www.instagram.com/the_baseball_bat_fighter/",
+            "https://www.youtube.com/@the_baseball_bat",
+            "https://t.me/the_baseball_bat"
+        ],
+        "knowsAbout": ["Brazilian Jiu-Jitsu", "BJJ", "AJP", "Grappling", "MMA"],
+        "award": "AJP Grand Slam Moscow Gold Medal"
+    }
+    </script>
+
+    <!-- ==================== TOP BAR ==================== -->
+    <nav class="topbar" id="topbar">
+        <div class="topbar-inner">
+            <a href="#" class="topbar-logo">BASEBALL<span>BAT</span></a>
+            <ul class="topbar-links" id="topbarLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#achievements">Rank</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#videos">Interviews</a></li>
+                <li><a href="#fight-videos">Fights</a></li>
+                <li><a href="#articles">Press</a></li>
+                <li><a href="#sponsors">Sponsors</a></li>
+                <li><a href="#contacts">Contact</a></li>
+            </ul>
+            <button class="topbar-toggle" id="topbarToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-bg-cover"></div>
+            <div class="hero-bg-glow"></div>
+            <div class="hero-bg-lines"></div>
+        </div>
+        <div class="container">
+            <p class="hero-pre">Professional BJJ Athlete</p>
+            <h1 class="hero-name">
+                Владимир<br>
+                <span class="em">«Baseball Bat»</span><br>
+                Нагорянский
+            </h1>
+            <p class="hero-tagline">
+                #1 North America · #2 World · Undefeated Spirit
+            </p>
+            <div class="hero-metrics">
+                <div class="metric">
+                    <div class="metric-number">21</div>
+                    <div class="metric-label">Years Old</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">#1</div>
+                    <div class="metric-label">NA Ranking</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">#2</div>
+                    <div class="metric-label">World AJP</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">10+</div>
+                    <div class="metric-label">Gold Medals</div>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#sponsors" class="btn btn-fight">Become a Sponsor</a>
+                <a href="#contacts" class="btn btn-ghost">Get in Touch</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ==================== COUNTDOWN ==================== -->
+    <section class="countdown-section" id="countdown">
+        <div class="container">
+            <div class="countdown-banner">
+                <div class="countdown-label">⚡ World Championship Countdown</div>
+                <div class="countdown-numbers" id="countdownDigits">
+                    <div class="countdown-digit">
+                        <div class="countdown-digit-val" id="cd-days">--</div>
+                        <div class="countdown-digit-lbl">Days</div>
+                    </div>
+                    <div class="countdown-divider">:</div>
+                    <div class="countdown-digit">
+                        <div class="countdown-digit-val" id="cd-hours">--</div>
+                        <div class="countdown-digit-lbl">Hours</div>
+                    </div>
+                    <div class="countdown-divider">:</div>
+                    <div class="countdown-digit">
+                        <div class="countdown-digit-val" id="cd-mins">--</div>
+                        <div class="countdown-digit-lbl">Minutes</div>
+                    </div>
+                    <div class="countdown-divider">:</div>
+                    <div class="countdown-digit">
+                        <div class="countdown-digit-val" id="cd-secs">--</div>
+                        <div class="countdown-digit-lbl">Seconds</div>
+                    </div>
+                </div>
+                <div class="countdown-tagline">May 29, 2026 · Gold is the Only Option</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section class="section about-section" id="about">
+        <div class="container">
+            <div class="section-badge">Who I Am</div>
+            <h2 class="section-title">The <span class="accent">Comeback</span> Story</h2>
+            <div class="about-layout">
+                <div class="about-visual">
+                    <img src="/media/photos/vladimir_profile.jpg" alt="Владимир Нагорянский" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" loading="lazy">
+                    <div class="about-visual-inner"></div>
+                    <div class="about-visual-label">VLADIMIR NAGORYANSKY · BLUE BELT · 69 KG</div>
+                </div>
+                <div>
+                    <p class="about-copy">
+                        <strong>7 лет бокса</strong> — ни одной значимой победы.
+                        В 15 лет всё изменилось: на пляже в Турции я впервые
+                        попробовал бразильское джиу-джитсу. Этот момент
+                        определил мою судьбу.
+                    </p>
+                    <div class="about-callout">
+                        «ЧМ ACBJJ 2022 — ноль побед. Я потерял сознание
+                        прямо на татами. Тренер сказал: "Тебе в женскую
+                        категорию". Я не сдался.»
+                    </div>
+                    <p class="about-copy">
+                        Сегодня я <strong>#1 в Северной Америке</strong> и
+                        <strong>#2 в мировом рейтинге AJP</strong>
+                        (вне весовых категорий). 29 мая 2026 — чемпионат мира.
+                        Я иду за золотом.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-chip">
+                            <div class="stat-chip-key">Name</div>
+                            <div class="stat-chip-val">Владимир Нагорянский</div>
+                        </div>
+                        <div class="stat-chip">
+                            <div class="stat-chip-key">Nickname</div>
+                            <div class="stat-chip-val">Baseball Bat</div>
+                        </div>
+                        <div class="stat-chip">
+                            <div class="stat-chip-key">Belt</div>
+                            <div class="stat-chip-val">Blue Belt</div>
+                        </div>
+                        <div class="stat-chip">
+                            <div class="stat-chip-key">Weight</div>
+                            <div class="stat-chip-val">до 69 кг</div>
+                        </div>
+                        <div class="stat-chip">
+                            <div class="stat-chip-key">Business</div>
+                            <div class="stat-chip-val">Crypto · Beatmaker</div>
+                        </div>
+                        <div class="stat-chip">
+                            <div class="stat-chip-key">Next Fight</div>
+                            <div class="stat-chip-val">29 мая 2026 · ЧМ</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ACHIEVEMENTS ==================== -->
+    <section class="section achievements" id="achievements">
+        <div class="container">
+            <div class="section-badge">Achievements</div>
+            <h2 class="section-title">World-Class <span class="accent">Dominance</span></h2>
+
+            <div class="rank-row">
+                <div class="rank-block">
+                    <div class="rank-num">#1</div>
+                    <div class="rank-sub">North America · AJP</div>
+                </div>
+                <div class="rank-block">
+                    <div class="rank-num">#2</div>
+                    <div class="rank-sub">World Ranking · AJP</div>
+                </div>
+            </div>
+
+            <div class="medal-section medal-gold">
+                <div class="medal-header">🥇 GOLD · AJP (10+)</div>
+                <ul class="medal-items">
+                    <li>Grand Slam Moscow</li>
+                    <li>Russia National</li>
+                    <li>Northwest Russia Regional</li>
+                    <li>Qatar National</li>
+                    <li>Switzerland National</li>
+                    <li>Valencia International (Spain)</li>
+                    <li>Frankfurt International (Germany)</li>
+                    <li>Latvia National</li>
+                    <li>Moscow International</li>
+                </ul>
+            </div>
+
+            <div class="medal-section medal-silver">
+                <div class="medal-header">🥈 SILVER</div>
+                <ul class="medal-items">
+                    <li>Milan International (Italy)</li>
+                    <li>Turkey National</li>
+                    <li>Bosnia National</li>
+                    <li>Austria National</li>
+                    <li>ACBJJ Northwest</li>
+                </ul>
+            </div>
+
+            <div class="medal-section medal-bronze">
+                <div class="medal-header">🥉 BRONZE</div>
+                <ul class="medal-items">
+                    <li>Bern International (Switzerland)</li>
+                    <li>Grand Slam Moscow</li>
+                    <li>ACBJJ Russia</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TIMELINE ==================== -->
+    <section class="section timeline-section" id="timeline">
+        <div class="container">
+            <div class="section-badge">Journey</div>
+            <h2 class="section-title">The <span class="accent">Path</span> to Glory</h2>
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-arrow"></div>
+                        <div class="timeline-year">2021</div>
+                        <div class="timeline-title">🥋 First Steps in BJJ</div>
+                        <div class="timeline-desc">After 7 years of boxing without significant wins, discovered Brazilian Jiu-Jitsu on a beach in Turkey. Fell in love instantly. Started training relentlessly.</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-arrow"></div>
+                        <div class="timeline-year">2021–2022</div>
+                        <div class="timeline-title">🏆 First Tournament Victories</div>
+                        <div class="timeline-desc">Quick rise through local and regional competitions. Won first medals at Russian tournaments. Discovered natural talent for competitive grappling.</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot defeat"></div>
+                    <div class="timeline-card defeat-card">
+                        <div class="timeline-arrow"></div>
+                        <div class="timeline-year">2022</div>
+                        <div class="timeline-title">💔 ACBJJ World Championship — 0 Wins</div>
+                        <div class="timeline-desc">Lost consciousness on the mats. Zero victories. Coach said: <em>"You belong in the women's division."</em> This became the fuel for everything that followed. Refused to quit.</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-arrow"></div>
+                        <div class="timeline-year">2023</div>
+                        <div class="timeline-title">🔥 The Comeback Begins</div>
+                        <div class="timeline-desc">Rebuilt technique from scratch. Won Grand Slam Moscow Gold. Started international campaign: Qatar, Switzerland, Spain — gold after gold. Earned nickname «Baseball Bat».</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot present"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-arrow"></div>
+                        <div class="timeline-year">2024–2025</div>
+                        <div class="timeline-title">🌍 International Dominance</div>
+                        <div class="timeline-desc">10+ gold medals across AJP tour. #1 North America ranking. #2 in the world (all weight classes). Victories in Germany, Latvia, Italy, Bosnia, Austria. Became an international force.</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot goal"></div>
+                    <div class="timeline-card goal-card">
+                        <div class="timeline-arrow"></div>
+                        <div class="timeline-year">2026</div>
+                        <div class="timeline-title">🏆 WORLD CHAMPIONSHIP · MAY 29</div>
+                        <div class="timeline-desc">The ultimate goal. Everything has led to this moment. Training harder than ever. The world will witness the full power of the Baseball Bat. <strong>Gold is the only option.</strong></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== GALLERY ==================== -->
+    <section class="section gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-badge">Visuals</div>
+            <h2 class="section-title">Fight <span class="accent">Gallery</span></h2>
+
+            <!-- Instagram Stats Featured Row -->
+            <div class="section-badge" style="margin-bottom:12px;">📊 Instagram Analytics</div>
+            <div class="ig-stats-row">
+                <div class="ig-stat-card" onclick="this.querySelector('img').requestFullscreen?.()">
+                    <div class="ig-stat-badge">Stats #1</div>
+                    <img src="/media/photos/photo_01.jpg" alt="Instagram Stats 1" loading="lazy">
+                </div>
+                <div class="ig-stat-card" onclick="this.querySelector('img').requestFullscreen?.()">
+                    <div class="ig-stat-badge">Stats #2</div>
+                    <img src="/media/photos/photo_02.jpg" alt="Instagram Stats 2" loading="lazy">
+                </div>
+                <div class="ig-stat-card" onclick="this.querySelector('img').requestFullscreen?.()">
+                    <div class="ig-stat-badge">Stats #3</div>
+                    <img src="/media/photos/photo_03.jpg" alt="Instagram Stats 3" loading="lazy">
+                </div>
+                <div class="ig-stat-card" onclick="this.querySelector('img').requestFullscreen?.()">
+                    <div class="ig-stat-badge">Stats #4</div>
+                    <img src="/media/photos/photo_04.jpg" alt="Instagram Stats 4" loading="lazy">
+                </div>
+                <div class="ig-stat-card" onclick="this.querySelector('img').requestFullscreen?.()">
+                    <div class="ig-stat-badge">Stats #5</div>
+                    <img src="/media/photos/photo_05.jpg" alt="Instagram Stats 5" loading="lazy">
+                </div>
+            </div>
+
+            <div class="section-badge" style="margin-bottom:16px;">📸 All Photos (32)</div>
+            <div class="gallery-grid" id="galleryGrid">
+                <div class="gallery-item" data-full="/media/photos/photo_01.jpg" data-caption="Instagram Stats · Overview"><img src="/media/photos/photo_01.jpg" alt="Instagram Stats 1" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">Instagram Stats #1</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_02.jpg" data-caption="Instagram Stats · Reach"><img src="/media/photos/photo_02.jpg" alt="Instagram Stats 2" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">Instagram Stats #2</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_03.jpg" data-caption="Instagram Stats · Engagement"><img src="/media/photos/photo_03.jpg" alt="Instagram Stats 3" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">Instagram Stats #3</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_04.jpg" data-caption="Instagram Stats · Growth"><img src="/media/photos/photo_04.jpg" alt="Instagram Stats 4" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">Instagram Stats #4</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_05.jpg" data-caption="Instagram Stats · Audience"><img src="/media/photos/photo_05.jpg" alt="Instagram Stats 5" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">Instagram Stats #5</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_06.jpg" data-caption="AJP Valencia International"><img src="/media/photos/photo_06.jpg" alt="AJP Valencia" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">AJP Valencia</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_07.jpg" data-caption="AJP Moscow Grand Slam"><img src="/media/photos/photo_07.jpg" alt="AJP Moscow" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">Moscow Grand Slam</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_08.jpg" data-caption="Competition Weigh-In"><img src="/media/photos/photo_08.jpg" alt="Weigh-In" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">Weigh-In</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_09.jpg" data-caption="Tournament Medal Ceremony"><img src="/media/photos/photo_09.jpg" alt="Medal Ceremony" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">Medal Ceremony</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_10.jpg" data-caption="AJP Frankfurt International"><img src="/media/photos/photo_10.jpg" alt="AJP Frankfurt" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">AJP Frankfurt</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_11.jpg" data-caption="Training Camp"><img src="/media/photos/photo_11.jpg" alt="Training Camp" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">Training Camp</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_12.jpg" data-caption="Fight Action Shot"><img src="/media/photos/photo_12.jpg" alt="Action Shot" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">Fight Action</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_13.jpg" data-caption="Post-Fight Victory"><img src="/media/photos/photo_13.jpg" alt="Victory" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">Victory Moment</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_14.jpg" data-caption="AJP Russia National"><img src="/media/photos/photo_14.jpg" alt="Russia National" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">Russia National</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_15.jpg" data-caption="AJP Latvia National"><img src="/media/photos/photo_15.jpg" alt="Latvia National" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">Latvia National</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_16.jpg" data-caption="BJJ Technique"><img src="/media/photos/photo_16.jpg" alt="Technique" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">BJJ Technique</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_17.jpg" data-caption="Competition Day"><img src="/media/photos/photo_17.jpg" alt="Competition" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">Competition Day</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_18.jpg" data-caption="Switzerland National"><img src="/media/photos/photo_18.jpg" alt="Switzerland" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">Switzerland</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_19.jpg" data-caption="Qatar National"><img src="/media/photos/photo_19.jpg" alt="Qatar" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">Qatar National</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_20.jpg" data-caption="Tournament Action Shot"><img src="/media/photos/photo_20.jpg" alt="Tournament" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">Tournament</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_21.jpg" data-caption="Fight Moment"><img src="/media/photos/photo_21.jpg" alt="Fight" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">Fight Moment</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_22.jpg" data-caption="AJP Milan International"><img src="/media/photos/photo_22.jpg" alt="Milan" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">AJP Milan</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_23.jpg" data-caption="Training Session"><img src="/media/photos/photo_23.jpg" alt="Training" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">Training</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_24.jpg" data-caption="Championship Belt"><img src="/media/photos/photo_24.jpg" alt="Belt" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">Championship</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_25.jpg" data-caption="Vladimir in Kimono"><img src="/media/photos/photo_25.jpg" alt="In Gi" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">In Kimono</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_26.jpg" data-caption="Weigh-In Moment"><img src="/media/photos/photo_26.jpg" alt="Weigh-In" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">Weigh-In</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_27.jpg" data-caption="Victory Pose"><img src="/media/photos/photo_27.jpg" alt="Victory" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">Victory Pose</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_28.jpg" data-caption="BJJ Sparring"><img src="/media/photos/photo_28.jpg" alt="Sparring" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">Sparring</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_29.jpg" data-caption="Medal Collection"><img src="/media/photos/photo_29.jpg" alt="Medals" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">Medals</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_30.jpg" data-caption="Competition Day"><img src="/media/photos/photo_30.jpg" alt="Competition" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">Competition</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_31.jpg" data-caption="AJP Tour Stop"><img src="/media/photos/photo_31.jpg" alt="AJP Tour" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">AJP Tour</span></div></div>
+                <div class="gallery-item" data-full="/media/photos/photo_32.jpg" data-caption="The Baseball Bat"><img src="/media/photos/photo_32.jpg" alt="Baseball Bat" loading="lazy"><div class="gallery-overlay"><span class="gallery-overlay-text">⚾ Baseball Bat</span></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">✕</button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="">
+        <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+    </div>
+
+    <!-- ==================== VIDEOS ==================== -->
+    <section class="section videos-section" id="videos">
+        <div class="container">
+            <div class="section-badge">Watch</div>
+            <h2 class="section-title">Video <span class="accent">Interviews</span></h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/cyL2goOrrME" title="Vladimir Nagoryansky Interview 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-info-title">🎙️ Exclusive Interview — The Baseball Bat Story</div>
+                        <div class="video-info-sub">YouTube · Full Interview</div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/RY7OWMeUHEA" title="Vladimir Nagoryansky Interview 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-info-title">🎬 Fight Analysis & Training Insights</div>
+                        <div class="video-info-sub">YouTube · Deep Dive</div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top:28px;">
+                <a href="https://youtube.com/@the_baseball_bat" class="btn btn-ghost" target="_blank" rel="noopener">Subscribe on YouTube</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FIGHT VIDEOS ==================== -->
+    <section class="section fight-videos-section" id="fight-videos">
+        <div class="container">
+            <div class="section-badge">🥊 Fight Footage</div>
+            <h2 class="section-title">Fight <span class="accent">Videos</span></h2>
+            <div class="fight-video-grid">
+                <div class="fight-video-card">
+                    <div class="fight-video-wrap">
+                        <video controls preload="metadata" poster="/media/photos/photo_06.jpg">
+                            <source src="/media/videos/fight_1610.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="fight-video-info">
+                        <div class="fight-video-title">⚡ Fight #1610 · Tournament Match</div>
+                        <div class="fight-video-sub">AJP Competition</div>
+                    </div>
+                </div>
+                <div class="fight-video-card">
+                    <div class="fight-video-wrap">
+                        <video controls preload="metadata" poster="/media/photos/photo_10.jpg">
+                            <source src="/media/videos/fight_1611.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="fight-video-info">
+                        <div class="fight-video-title">⚡ Fight #1611 · Submission Win</div>
+                        <div class="fight-video-sub">AJP Competition</div>
+                    </div>
+                </div>
+                <div class="fight-video-card">
+                    <div class="fight-video-wrap">
+                        <video controls preload="metadata" poster="/media/photos/photo_12.jpg">
+                            <source src="/media/videos/fight_1612.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="fight-video-info">
+                        <div class="fight-video-title">⚡ Fight #1612 · Gold Medal Match</div>
+                        <div class="fight-video-sub">AJP Competition</div>
+                    </div>
+                </div>
+                <div class="fight-video-card">
+                    <div class="fight-video-wrap">
+                        <video controls preload="metadata" poster="/media/photos/photo_20.jpg">
+                            <source src="/media/videos/fight_1613.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="fight-video-info">
+                        <div class="fight-video-title">⚡ Fight #1613 · Championship Bout</div>
+                        <div class="fight-video-sub">AJP Competition</div>
+                    </div>
+                </div>
+                <div class="fight-video-card">
+                    <div class="fight-video-wrap">
+                        <video controls preload="metadata" poster="/media/photos/photo_30.jpg">
+                            <source src="/media/videos/fight_7429.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="fight-video-info">
+                        <div class="fight-video-title">⚡ Fight #7429 · Highlight Reel</div>
+                        <div class="fight-video-sub">AJP Competition</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ARTICLES ==================== -->
+    <section class="section articles-section" id="articles">
+        <div class="container">
+            <div class="section-badge">Press</div>
+            <h2 class="section-title">Media & <span class="accent">Articles</span></h2>
+            <div class="articles-grid">
+                <a href="https://www.bydfi.com/blog/bydfi/partnerships-ama/from-the-bjj-mat-to-the-markets-the-decisive-victory-of-world-1-baseball-bat-vladimir/" class="article-card" target="_blank" rel="noopener">
+                    <div class="article-source">BYDFi Blog</div>
+                    <div class="article-title">From the BJJ Mat to the Markets: The Decisive Victory of World #1 Baseball Bat Vladimir</div>
+                    <div class="article-excerpt">An in-depth feature on Vladimir's journey from the mats to the crypto trading world — covering his partnership with BYDFi and his dual career as a fighter and trader.</div>
+                    <span class="article-read">Read Full Article</span>
+                </a>
+                <a href="https://ajptour.com/en/profile/183810" class="article-card" target="_blank" rel="noopener">
+                    <div class="article-source">AJP Tour Official</div>
+                    <div class="article-title">Official AJP Profile: Vladimir Nagoryansky — #2 World Ranking</div>
+                    <div class="article-excerpt">Complete competition history, ranking data, and medal count on the official Abu Dhabi Jiu-Jitsu Pro tour website. All verified match results.</div>
+                    <span class="article-read">View Profile</span>
+                </a>
+            </div>
+
+            <!-- Screenshots: ChatGPT & OpenCode -->
+            <div class="section-badge" style="margin-top:30px; margin-bottom:4px;">🖥️ AI & Dev</div>
+            <div class="screenshot-grid">
+                <a href="/media/chatgpt_1.png" class="screenshot-card" target="_blank">
+                    <img src="/media/chatgpt_1.png" alt="ChatGPT Analysis 1" loading="lazy">
+                    <div class="screenshot-label">ChatGPT · Analysis #1</div>
+                </a>
+                <a href="/media/chatgpt_2.png" class="screenshot-card" target="_blank">
+                    <img src="/media/chatgpt_2.png" alt="ChatGPT Analysis 2" loading="lazy">
+                    <div class="screenshot-label">ChatGPT · Analysis #2</div>
+                </a>
+                <a href="/media/chatgpt_3.png" class="screenshot-card" target="_blank">
+                    <img src="/media/chatgpt_3.png" alt="ChatGPT Analysis 3" loading="lazy">
+                    <div class="screenshot-label">ChatGPT · Analysis #3</div>
+                </a>
+                <a href="/media/opencode_screenshot.png" class="screenshot-card" target="_blank">
+                    <img src="/media/opencode_screenshot.png" alt="OpenCode Session" loading="lazy">
+                    <div class="screenshot-label">OpenCode · Dev Session</div>
+                </a>
+            </div>
+
+            <!-- PDF Downloads -->
+            <div class="section-badge" style="margin-top:30px; margin-bottom:4px;">📄 Downloads</div>
+            <div class="pdf-grid">
+                <a href="/media/chatgpt_analysis.pdf" class="pdf-card" download>
+                    <div class="pdf-icon">📊</div>
+                    <div>
+                        <div class="pdf-info-title">ChatGPT Analysis</div>
+                        <div class="pdf-info-sub">PDF · AI Strategy Report</div>
+                    </div>
+                </a>
+                <a href="/media/opencode_session.pdf" class="pdf-card" download>
+                    <div class="pdf-icon">💻</div>
+                    <div>
+                        <div class="pdf-info-title">OpenCode Session</div>
+                        <div class="pdf-info-sub">PDF · Development Log</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MEDIA ==================== -->
+    <section class="section media-section" id="media">
+        <div class="container">
+            <div class="section-badge">Social</div>
+            <h2 class="section-title">Follow the <span class="accent">Journey</span></h2>
+            <div class="media-grid">
+                <a href="https://www.instagram.com/the_baseball_bat_fighter/" class="media-card" target="_blank" rel="noopener">
+                    <div class="media-emoji">📸</div>
+                    <div class="media-title">Instagram</div>
+                    <div class="media-stat">~1M views / month</div>
+                    <div class="media-handle">@the_baseball_bat_fighter</div>
+                </a>
+                <a href="https://www.youtube.com/@the_baseball_bat" class="media-card" target="_blank" rel="noopener">
+                    <div class="media-emoji">▶️</div>
+                    <div class="media-title">YouTube</div>
+                    <div class="media-stat">Fight Content</div>
+                    <div class="media-handle">@the_baseball_bat</div>
+                </a>
+                <a href="https://t.me/the_baseball_bat" class="media-card" target="_blank" rel="noopener">
+                    <div class="media-emoji">💬</div>
+                    <div class="media-title">Telegram</div>
+                    <div class="media-stat">Direct Contact</div>
+                    <div class="media-handle">@the_baseball_bat</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SPONSORS ==================== -->
+    <section class="section sponsors-section" id="sponsors">
+        <div class="container">
+            <div class="sponsors-wrap">
+                <div class="section-badge">Partnership</div>
+                <h2 class="section-title">Become a <span class="accent">Sponsor</span></h2>
+                <p class="sponsors-lead">
+                    Я ищу амбициозных партнёров, готовых войти в мир профессионального
+                    BJJ. Моя аудитория — преданные фанаты единоборств, спортсмены
+                    и активная молодёжь. Высокий уровень вовлечения, международный охват.
+                </p>
+                <div class="perks-grid">
+                    <div class="perk">
+                        <div class="perk-icon">👕</div>
+                        <div>
+                            <div class="perk-title">Logo on Gi</div>
+                            <div class="perk-desc">Ваш бренд на соревновательном кимоно и повседневной экипировке</div>
+                        </div>
+                    </div>
+                    <div class="perk">
+                        <div class="perk-icon">📱</div>
+                        <div>
+                            <div class="perk-title">Social Mentions</div>
+                            <div class="perk-desc">~1M просмотров/мес, 2000+ подписчиков Instagram</div>
+                        </div>
+                    </div>
+                    <div class="perk">
+                        <div class="perk-icon">🎬</div>
+                        <div>
+                            <div class="perk-title">Reels Integration</div>
+                            <div class="perk-desc">Нативная реклама в коротких видео с максимальным охватом</div>
+                        </div>
+                    </div>
+                    <div class="perk">
+                        <div class="perk-icon">🤝</div>
+                        <div>
+                            <div class="perk-title">Networking</div>
+                            <div class="perk-desc">Доступ к BJJ-комьюнити, крипто- и бизнес-контактам</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sponsors-cta-wrap">
+                    <a href="#contacts" class="btn btn-fight">Discuss Partnership</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACTS ==================== -->
+    <section class="section contacts-section" id="contacts">
+        <div class="container">
+            <div class="section-badge">Contact</div>
+            <h2 class="section-title">Let's <span class="accent">Talk</span></h2>
+            <div class="contact-layout">
+                <ul class="contact-list">
+                    <li>
+                        <span class="contact-emoji">📸</span>
+                        <div>
+                            <div class="contact-type">Instagram</div>
+                            <a href="https://www.instagram.com/the_baseball_bat_fighter/" target="_blank" rel="noopener">@the_baseball_bat_fighter</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="contact-emoji">💬</span>
+                        <div>
+                            <div class="contact-type">Telegram</div>
+                            <a href="https://t.me/the_baseball_bat" target="_blank" rel="noopener">@the_baseball_bat</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="contact-emoji">▶️</span>
+                        <div>
+                            <div class="contact-type">YouTube</div>
+                            <a href="https://www.youtube.com/@the_baseball_bat" target="_blank" rel="noopener">@the_baseball_bat</a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="contact-punch">
+                    <div class="contact-punch-title">Ready to Win?</div>
+                    <p class="contact-punch-text">
+                        Telegram — самый быстрый способ связаться.<br>
+                        Обсудим условия лично.
+                    </p>
+                    <a href="https://t.me/the_baseball_bat" class="btn btn-fight" target="_blank" rel="noopener">Write on Telegram</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">© 2026 Владимир «Baseball Bat» Нагорянский · #1 North America · Blue Belt · BJJ</p>
+            <div class="footer-date">🏆 WORLD CHAMPIONSHIP · MAY 29, 2026 🏆</div>
+        </div>
+    </footer>
+
+    <script>
+        // ============ MOBILE NAV ============
+        const toggle = document.getElementById('topbarToggle');
+        const links = document.getElementById('topbarLinks');
+
+        toggle.addEventListener('click', () => {
+            links.classList.toggle('active');
+        });
+        links.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => links.classList.remove('active'));
+        });
+
+        // ============ COUNTDOWN TO WORLD CHAMPIONSHIP ============
+        const targetDate = new Date('2026-05-29T00:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+
+            if (diff <= 0) {
+                document.getElementById('cd-days').textContent = '00';
+                document.getElementById('cd-hours').textContent = '00';
+                document.getElementById('cd-mins').textContent = '00';
+                document.getElementById('cd-secs').textContent = '00';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+            document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+            document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // ============ LIGHTBOX GALLERY ============
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+        const lightboxCounter = document.getElementById('lightboxCounter');
+
+        const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            const item = galleryItems[index];
+            lightboxImg.src = item.dataset.full;
+            lightboxImg.alt = item.dataset.caption || '';
+            lightboxCounter.textContent = (index + 1) + ' / ' + galleryItems.length;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+            const item = galleryItems[currentIndex];
+            lightboxImg.src = item.dataset.full;
+            lightboxImg.alt = item.dataset.caption || '';
+            lightboxCounter.textContent = (currentIndex + 1) + ' / ' + galleryItems.length;
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % galleryItems.length;
+            const item = galleryItems[currentIndex];
+            lightboxImg.src = item.dataset.full;
+            lightboxImg.alt = item.dataset.caption || '';
+            lightboxCounter.textContent = (currentIndex + 1) + ' / ' + galleryItems.length;
+        }
+
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => openLightbox(index));
+        });
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+        lightboxPrev.addEventListener('click', prevImage);
+        lightboxNext.addEventListener('click', nextImage);
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') prevImage();
+            if (e.key === 'ArrowRight') nextImage();
+        });
+
+        // ============ NAV DOTS INDICATOR ============
+        const sections = document.querySelectorAll('section[id]');
+        const navDotsContainer = document.createElement('div');
+        navDotsContainer.className = 'nav-dots';
+        navDotsContainer.id = 'navDots';
+        document.body.appendChild(navDotsContainer);
+
+        const sectionLabels = {
+            'hero': 'Home',
+            'countdown': 'Countdown',
+            'about': 'About',
+            'achievements': 'Rank',
+            'timeline': 'Timeline',
+            'gallery': 'Gallery',
+            'videos': 'Interviews',
+            'fight-videos': 'Fights',
+            'articles': 'Press',
+            'media': 'Social',
+            'sponsors': 'Sponsors',
+            'contacts': 'Contact'
+        };
+
+        sections.forEach(section => {
+            const dot = document.createElement('div');
+            dot.className = 'nav-dot';
+            dot.dataset.target = section.id;
+            const tooltip = document.createElement('span');
+            tooltip.className = 'nav-dot-tooltip';
+            tooltip.textContent = sectionLabels[section.id] || section.id;
+            dot.appendChild(tooltip);
+            dot.addEventListener('click', () => {
+                document.getElementById(section.id).scrollIntoView({ behavior: 'smooth' });
+            });
+            navDotsContainer.appendChild(dot);
+        });
+
+        function updateNavDots() {
+            const dots = navDotsContainer.querySelectorAll('.nav-dot');
+            let currentActive = null;
+            const scrollPos = window.scrollY + window.innerHeight / 3;
+
+            sections.forEach((section, i) => {
+                const top = section.offsetTop;
+                const bottom = top + section.offsetHeight;
+                if (scrollPos >= top && scrollPos < bottom) {
+                    currentActive = i;
+                }
+            });
+
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentActive);
+            });
+        }
+
+        window.addEventListener('scroll', updateNavDots, { passive: true });
+        updateNavDots();
+
+        // ============ SCROLL REVEAL ============
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.08 });
+
+        document.querySelectorAll('.section, .rank-block, .media-card, .perk, .about-visual').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(24px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            revealObserver.observe(el);
+        });
+
+        // ============ TIMELINE SCROLL REVEAL ============
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.timeline-item').forEach((item, i) => {
+            item.style.transitionDelay = (i * 0.1) + 's';
+            timelineObserver.observe(item);
+        });
+
+        // ============ TOPBAR SCROLL EFFECT ============
+        const topbar = document.getElementById('topbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                topbar.style.background = 'rgba(10, 0, 0, 0.95)';
+                topbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.5)';
+            } else {
+                topbar.style.background = 'rgba(10, 0, 0, 0.85)';
+                topbar.style.boxShadow = 'none';
+            }
+        }, { passive: true });
+
+        // Trigger hero immediately
+        setTimeout(() => {
+            document.querySelector('.hero').style.opacity = '1';
+        }, 50);
+    </script>
+</body>
+</html>

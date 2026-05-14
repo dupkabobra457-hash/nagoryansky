@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Владимир Нагорянский — Сайты</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: #0A0A0A;
+  color: #F5F5F5;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+.container {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+.badge {
+  display: inline-block;
+  padding: 8px 24px;
+  border: 1px solid #C9A84C;
+  border-radius: 50px;
+  color: #C9A84C;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+h1 {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+h1 .gold { color: #C9A84C; }
+.subtitle {
+  color: #888;
+  font-size: 16px;
+  margin-bottom: 48px;
+}
+.sites {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.site-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 28px;
+  background: #1A1A1A;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s;
+  text-align: left;
+}
+.site-card:hover {
+  transform: translateY(-2px);
+  border-color: #C9A84C;
+  box-shadow: 0 8px 30px rgba(201,168,76,0.15);
+}
+.site-icon {
+  font-size: 40px;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(201,168,76,0.1);
+  border-radius: 16px;
+  flex-shrink: 0;
+}
+.site-info h3 {
+  font-family: 'Georgia', serif;
+  font-size: 20px;
+  color: #C9A84C;
+  margin-bottom: 4px;
+}
+.site-info p {
+  font-size: 13px;
+  color: #888;
+  line-height: 1.5;
+}
+.site-link {
+  margin-left: auto;
+  color: #C9A84C;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.footer {
+  color: #555;
+  font-size: 12px;
+  margin-top: 16px;
+}
+.note {
+  color: #C9A84C;
+  font-size: 11px;
+  margin-top: 24px;
+  padding: 12px 20px;
+  background: rgba(201,168,76,0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(201,168,76,0.1);
+}
+
+@media (max-width: 600px) {
+  h1 { font-size: 28px; }
+  .site-card { flex-direction: column; text-align: center; padding: 20px; }
+  .site-link { margin: 8px 0 0; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="badge">🥋 BJJ · Медиа-презентация</div>
+  <h1>Владимир <span class="gold">Нагорянский</span></h1>
+  <p class="subtitle">Выберите сайт для просмотра ↓</p>
+
+  <div class="sites">
+    <a href="/nagoryansky_mega.html" class="site-card">
+      <div class="site-icon">🌐</div>
+      <div class="site-info">
+        <h3>МЕГА-САЙТ</h3>
+        <p>Всё в одном: 32 фото, 5 видео, медали, таймлайн, пресса, счётчик ЧМ, спонсорам</p>
+      </div>
+      <span class="site-link">Открыть →</span>
+    </a>
+
+    <a href="/nagoryansky_site_premium.html" class="site-card">
+      <div class="site-icon">💎</div>
+      <div class="site-info">
+        <h3>Premium</h3>
+        <p>Изысканный дизайн: фото, видео, интервью, ChatGPT-анализ, PDF</p>
+      </div>
+      <span class="site-link">Открыть →</span>
+    </a>
+
+    <a href="/nagoryansky_site_dynamic.html" class="site-card">
+      <div class="site-icon">⚡</div>
+      <div class="site-info">
+        <h3>Dynamic</h3>
+        <p>Боковая навигация, счётчик ЧМ, шумовой фон, уникальные анимации</p>
+      </div>
+      <span class="site-link">Открыть →</span>
+    </a>
+  </div>
+
+  <div class="note">
+    ⚠️ Ссылка временная (через bore-туннель). Будет работать пока запущен сервер.
+  </div>
+  <p class="footer">© 2026 Владимир Нагорянский · #1 AJP Северная Америка · #2 Мир</p>
+</div>
+</body>
+</html>
